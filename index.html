@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PickleFreak</title>
+  <meta name="description" content="PickleFreak — gestión de torneos de pickleball: niveles, grupos, programación y resultados.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a href="#/" class="brand" aria-label="Inicio"><img src="assets/logo.png" alt="PickleFreak"></a>
+    <nav id="nav" class="nav"></nav>
+    <div id="sync" class="sync" hidden></div>
+  </header>
+  <main id="app" class="container"><div class="loading">Cargando…</div></main>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="export-root" aria-hidden="true"></div>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
