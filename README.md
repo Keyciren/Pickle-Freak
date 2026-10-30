@@ -1,5 +1,6 @@
 # PickleFreak 🥒
-\nClub PickleFreak.
+
+Club PickleFreak.
 
 Web para gestionar torneos de pickleball: jugadores, niveles (Singles, Dobles, All Around), grupos, fases finales, programación de canchas, podio, histórico y exportación a Excel/imagen.
 
