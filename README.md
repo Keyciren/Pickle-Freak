@@ -1,2 +1,2 @@
-# Pickle-Freak
+# PickleFreak
 Club PickleFreak
