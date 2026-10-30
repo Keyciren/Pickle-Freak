@@ -24,8 +24,12 @@ Estructura: `players[]` (nombre, correo, RUT), `tournaments[]` → `levels[]` (m
 ## Formatos de juego
 
 - **Singles / Dobles**: todos contra todos dentro del grupo. Con 4 o más inscritos se juegan semifinales (1° vs 4°, 2° vs 3°, evitando cruces del mismo grupo), final y 3er lugar.
-- **All Around**: los jugadores rotan de pareja; cada uno hace pareja con todos los demás del grupo. Ranking individual. Con 8 o más jugadores, los 8 mejores forman parejas (1°+8°, 2°+7°, 3°+6°, 4°+5°) para semifinales y finales.
+- **All Around**: los jugadores rotan de pareja; cada uno hace pareja con todos los demás del grupo. Ranking individual. Con 2 grupos, la fase final se juega en dobles por puesto: 1°A+2°A vs 1°B+2°B (1° y 2° lugar), 3°A+4°A vs 3°B+4°B (3° y 4°), y así sucesivamente. Con 1 grupo y 8 o más jugadores, los 8 mejores forman parejas (1°+8°, 2°+7°, 3°+6°, 4°+5°) para semifinales y finales.
 - Desempate: partidos ganados → diferencia de puntos → puntos a favor.
+
+## Programación
+
+Por turnos: en cada turno todas las canchas parten a la misma hora. Cada turno dura los minutos por partido más el descanso (o los minutos por final si hay finales). Las fechas de cada grupo se juegan en orden y las fases finales parten cuando el nivel termina la fase anterior; nadie juega dos partidos en el mismo turno.
 
 ## Desarrollo local
 

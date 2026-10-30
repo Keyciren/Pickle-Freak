@@ -22,13 +22,15 @@ export function newTournament(name, date) {
   return {
     id: uid(), name, date, status: 'active', createdAt: new Date().toISOString(), finishedAt: null,
     levels: [],
-    schedule: { courts: ['Cancha 1', 'Cancha 2'], start: '09:00', hours: 8, minutes: { group: 20, semi: 30, final: 35 } },
+    schedule: { numCourts: 2, courts: ['Cancha 1', 'Cancha 2'], start: '09:00', hours: 8, minutes: { match: 15, final: 20 }, rest: 0 },
   };
 }
 
 /* ---------- Partidos y resultados ---------- */
 
 export const fmtKey = m => m.phase === 'group' ? 'group' : m.phase === 'semi' ? 'semi' : 'final';
+// All Around con 2 grupos: partidos por puesto (1°A+2°A vs 1°B+2°B, 3°A+4°A vs 3°B+4°B, …), sin semifinales.
+export const aaPlacement = L => isAA(L) && groupCount(L) === 2;
 export const fmtFor = (L, m) => L.formats[fmtKey(m)];
 
 export function gameScores(m) {
@@ -165,6 +167,17 @@ export function generateLevel(L) {
     }
   }
   const n = L.entries.length;
+  if (aaPlacement(L)) {
+    const pairs = Math.floor(Math.min(...[0, 1].map(g => L.entries.filter(e => e.group === g).length)) / 2);
+    for (let k = 0; k < pairs; k++) {
+      const hi = 2 * k + 1, lo = 2 * k + 2, place = 2 * k + 1;
+      const phase = k === 0 ? 'final' : k === 1 ? 'third' : 'place';
+      matches.push(mkMatch(phase, null, null, { place, phA: `${hi}° A + ${lo}° A`, phB: `${hi}° B + ${lo}° B` }));
+    }
+    L.matches = matches;
+    L.generated = true;
+    return;
+  }
   const withSemis = isAA(L) ? n >= 8 : n >= 4;
   if (withSemis) {
     const [p1, p4, p2, p3] = isAA(L)
@@ -236,6 +249,15 @@ export function advance(L) {
   const fin = L.matches.find(m => m.phase === 'final');
   const th = L.matches.find(m => m.phase === 'third');
   const gDone = groupStageDone(L);
+  if (aaPlacement(L)) {
+    const [A, B] = [standings(L, 0), standings(L, 1)];
+    for (const m of L.matches.filter(x => x.phase !== 'group' && untouched(x))) {
+      const i = m.place - 1;
+      if (gDone && A[i + 1] && B[i + 1]) { m.a = { players: [A[i].key, A[i + 1].key] }; m.b = { players: [B[i].key, B[i + 1].key] }; }
+      else m.a = m.b = null;
+    }
+    return;
+  }
   if (sf.length) {
     if (sf.every(untouched)) {
       if (gDone) fillSemis(L, sf); else sf.forEach(m => { m.a = m.b = null; });
@@ -302,57 +324,78 @@ export const tournamentComplete = T => T.levels.length > 0 && T.levels.every(lev
 /* ---------- Programación ---------- */
 
 export const toMin = hhmm => { const [h, m] = String(hhmm || '0:0').split(':').map(Number); return (h || 0) * 60 + (m || 0); };
-const PHASE_ORDER = { group: 0, semi: 1, third: 2, final: 3 };
+const PHASE_ORDER = { group: 0, semi: 1, place: 2, third: 3, final: 4 };
+export const isFinalPhase = m => m.phase === 'final' || m.phase === 'third' || m.phase === 'place';
 
+// Normaliza la configuración (compatibilidad con la versión anterior).
+export function scheduleCfg(T) {
+  const s = T.schedule;
+  s.minutes ||= {};
+  s.minutes.match ??= s.minutes.group ?? 15;
+  s.minutes.final ??= 20;
+  s.rest ??= 0;
+  s.numCourts ??= (s.courts || []).length || 2;
+  s.courts = Array.from({ length: Math.max(1, +s.numCourts) }, (_, i) => `Cancha ${i + 1}`);
+  return s;
+}
+export const durationOf = (T, m) => +(isFinalPhase(m) ? T.schedule.minutes.final : (T.schedule.minutes.match ?? T.schedule.minutes.group)) || 0;
+
+// Programación por turnos: en cada turno todas las canchas parten a la misma hora.
+// Las fechas de un grupo se respetan en orden y las fases finales parten cuando el nivel termina la fase anterior.
 export function buildSchedule(T) {
-  const cfg = T.schedule;
-  const courts = cfg.courts.filter(Boolean);
-  if (!courts.length) throw new Error('Ingresa al menos una cancha.');
-  const start = toMin(cfg.start), end = start + (+cfg.hours || 0) * 60;
-  const dur = { group: +cfg.minutes.group || 20, semi: +cfg.minutes.semi || 30, third: +cfg.minutes.final || 30, final: +cfg.minutes.final || 30 };
+  const cfg = scheduleCfg(T);
+  const courts = cfg.courts;
+  const start = toMin(cfg.start), end = start + (+cfg.hours || 0) * 60, rest = +cfg.rest || 0;
 
   const items = [];
   T.levels.forEach((L, li) => L.matches.forEach((m, mi) => items.push({ L, m, li, mi })));
-  items.sort((x, y) => (PHASE_ORDER[x.m.phase] - PHASE_ORDER[y.m.phase]) || ((x.m.round || 0) - (y.m.round || 0)) || (x.li - y.li) || ((x.m.group || 0) - (y.m.group || 0)) || (x.mi - y.mi));
-
-  const courtFree = courts.map(() => start);
-  const playerFree = new Map();
-  const pending = new Map(T.levels.map(L => [L.id, { group: 0, semi: 0, gEnd: start, sEnd: start }]));
-  items.forEach(it => { const p = pending.get(it.L.id); if (it.m.phase === 'group') p.group++; if (it.m.phase === 'semi') p.semi++; });
+  items.sort((x, y) => (PHASE_ORDER[x.m.phase] - PHASE_ORDER[y.m.phase]) || ((x.m.round || 0) - (y.m.round || 0)) || ((x.m.place || 0) - (y.m.place || 0)) || (x.li - y.li) || ((x.m.group || 0) - (y.m.group || 0)) || (x.mi - y.mi));
 
   const remaining = new Set(items);
-  let overflow = 0;
+  let t = start, turn = 0;
   while (remaining.size) {
-    let best = null;
-    const minCourt = Math.min(...courtFree);
-    for (const it of items) {
-      if (!remaining.has(it)) continue;
-      const p = pending.get(it.L.id);
-      let dep = start;
-      if (it.m.phase === 'semi') { if (p.group) continue; dep = p.gEnd; }
-      if (it.m.phase === 'final' || it.m.phase === 'third') { if (p.group || p.semi) continue; dep = Math.max(p.gEnd, p.sEnd); }
-      const ps = [...sidePlayers(it.L, it.m.a), ...sidePlayers(it.L, it.m.b)];
-      const est = Math.max(dep, minCourt, ...ps.map(x => playerFree.get(x) ?? start));
-      if (!best || est < best.t) best = { it, t: est };
-      if (best.t === minCourt) break;
+    // estado al inicio del turno
+    const minRound = new Map(), pend = new Map();
+    for (const it of remaining) {
+      const gk = it.L.id + '|' + it.m.group;
+      if (it.m.phase === 'group') minRound.set(gk, Math.min(minRound.get(gk) ?? Infinity, it.m.round));
+      const p = pend.get(it.L.id) || { group: 0, semi: 0 };
+      if (it.m.phase === 'group') p.group++;
+      if (it.m.phase === 'semi') p.semi++;
+      pend.set(it.L.id, p);
     }
-    const { it, t } = best;
-    // la cancha libre más tarde que aún permite empezar a la hora t
-    let ci = -1;
-    courtFree.forEach((f, i) => { if (f <= t && (ci < 0 || f > courtFree[ci])) ci = i; });
-    const d = dur[it.m.phase];
-    it.m.time = t; it.m.court = courts[ci];
-    courtFree[ci] = t + d;
-    [...sidePlayers(it.L, it.m.a), ...sidePlayers(it.L, it.m.b)].forEach(x => playerFree.set(x, t + d));
-    const p = pending.get(it.L.id);
-    if (it.m.phase === 'group') { p.group--; p.gEnd = Math.max(p.gEnd, t + d); }
-    if (it.m.phase === 'semi') { p.semi--; p.sEnd = Math.max(p.sEnd, t + d); }
-    if (t + d > end) overflow++;
-    remaining.delete(it);
+    const chosen = [], busy = new Set();
+    for (const it of items) {
+      if (chosen.length === courts.length) break;
+      if (!remaining.has(it)) continue;
+      const p = pend.get(it.L.id), m = it.m;
+      if (m.phase === 'group' && m.round !== minRound.get(it.L.id + '|' + m.group)) continue;
+      if (m.phase !== 'group' && p.group) continue;
+      if ((m.phase === 'final' || m.phase === 'third') && p.semi) continue;
+      const ps = [...sidePlayers(it.L, m.a), ...sidePlayers(it.L, m.b)];
+      if (ps.some(x => busy.has(x))) continue;
+      ps.forEach(x => busy.add(x));
+      chosen.push(it);
+    }
+    if (!chosen.length) break;
+    turn++;
+    chosen.forEach((it, i) => { it.m.time = t; it.m.court = courts[i]; it.m.turn = turn; remaining.delete(it); });
+    t += Math.max(...chosen.map(it => durationOf(T, it.m))) + rest;
   }
-  const last = Math.max(start, ...courtFree);
+  const endTime = t - (turn ? rest : 0);
   cfg.generatedAt = new Date().toISOString();
-  return { matches: items.length, endTime: last, overflow, limit: end };
+  return { matches: items.length, turns: turn, endTime, limit: end, fits: endTime <= end };
 }
 
-export const durationOf = (T, m) => +(m.phase === 'group' ? T.schedule.minutes.group : m.phase === 'semi' ? T.schedule.minutes.semi : T.schedule.minutes.final) || 0;
+export function scheduleSummary(T) {
+  const all = T.levels.flatMap(L => L.matches);
+  const count = ph => all.filter(m => m.phase === ph).length;
+  const scheduled = all.filter(m => m.time != null);
+  const s = T.schedule;
+  const endTime = scheduled.length ? Math.max(...scheduled.map(m => m.time + durationOf(T, m))) : null;
+  return {
+    group: count('group'), semi: count('semi'), third: count('third'), final: count('final'), place: count('place'),
+    turns: new Set(scheduled.map(m => m.time)).size, courts: (s.courts || []).length,
+    total: all.length, scheduled: scheduled.length, endTime, limit: toMin(s.start) + (+s.hours || 0) * 60,
+  };
+}

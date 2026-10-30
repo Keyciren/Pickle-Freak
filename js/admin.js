@@ -2,9 +2,9 @@
 import { store, getToken, setToken, sync, sha256, replaceDB } from './store.js';
 import {
   uid, MODES, newLevel, newTournament, groupName, groupCount, entryNoun, generateLevel, assignRandomGroups,
-  advance, buildSchedule, levelComplete, tournamentComplete, matchResult, podium, isAA,
+  advance, buildSchedule, scheduleCfg, scheduleSummary, levelComplete, tournamentComplete, matchResult, podium, isAA,
 } from './logic.js';
-import { esc, fmtTime, fmtDate, formatText, levelSummary, groupBlocks, finalsBlock, podiumHTML, scheduleTable } from './render.js';
+import { esc, fmtTime, fmtDate, formatText, levelSummary, groupBlocks, finalsBlock, podiumHTML, scheduleGrid } from './render.js';
 import { $, $$, db, on, toast, commit, pref, findOrCreatePlayer, activeTournaments, currentTournament, setCurrentTournament, keepFocus, norm } from './ui.js';
 import { exportExcel, exportImage } from './export.js';
 import { viewer } from './player.js';
@@ -229,7 +229,7 @@ function modeHint(mode) {
   return {
     singles: 'Singles: cada jugador juega contra todos los de su grupo. Con 4 o más jugadores se juegan semifinales, final y 3er lugar.',
     doubles: 'Dobles: cada pareja juega contra todas las de su grupo. Con 4 o más parejas se juegan semifinales, final y 3er lugar.',
-    allaround: 'All Around: los jugadores rotan de pareja y juegan todos con todos (cada jugador hace pareja con cada compañero del grupo). Ranking individual; con 8 o más jugadores, los 8 mejores forman parejas (1°+8°, 2°+7°…) para semifinales y finales. Mínimo 4 jugadores por grupo.',
+    allaround: 'All Around: los jugadores rotan de pareja y juegan todos con todos (cada jugador hace pareja con cada compañero del grupo). Ranking individual. Con 2 grupos, la fase final se juega en dobles por puesto: 1°A+2°A vs 1°B+2°B (1° y 2° lugar), 3°A+4°A vs 3°B+4°B (3° y 4°), y así (formato de \"Final\"; no hay semifinales). Con 1 grupo y 8 o más jugadores: parejas 1°+8°, 2°+7°… a semifinales. Mínimo 4 jugadores por grupo.',
   }[mode];
 }
 
@@ -349,39 +349,44 @@ const grupos = withTournament('Grupos', 'Tabla de posiciones, fechas y resultado
 
 /* ---------- 5. Programación ---------- */
 
-const programacion = withTournament('Programación', 'Canchas, horarios y cuadro resumen de partidos.', (T, rerender) => {
-  const s = T.schedule;
-  const total = T.levels.reduce((n, L) => n + L.matches.length, 0);
-  const scheduled = T.levels.some(L => L.matches.some(m => m.time != null));
+const programacion = withTournament('Programación', 'Canchas, horarios y programa por cancha.', (T, rerender) => {
+  const s = scheduleCfg(T);
+  const sum = scheduleSummary(T);
+  const scheduled = sum.scheduled > 0;
   const notGen = T.levels.filter(L => !L.generated);
-  const limit = (+s.start.split(':')[0] * 60 + +s.start.split(':')[1]) + (+s.hours) * 60;
-  const lastEnd = Math.max(0, ...T.levels.flatMap(L => L.matches.filter(m => m.time != null).map(m => m.time + (+(m.phase === 'group' ? s.minutes.group : m.phase === 'semi' ? s.minutes.semi : s.minutes.final)))));
   const complete = tournamentComplete(T);
-  const html = `<div class="card"><h3>Configuración</h3>
+  const fits = sum.endTime != null && sum.endTime <= sum.limit;
+  const diff = sum.endTime != null ? Math.abs(sum.limit - sum.endTime) : 0;
+  const tiles = [[sum.group, 'Fase de grupos'], [sum.semi, 'Semifinales'], [sum.third, 'Por el 3er lugar'], [sum.final, 'Finales']]
+    .concat(sum.place ? [[sum.place, 'Otros puestos']] : [])
+    .concat([[sum.turns || '—', 'Turnos'], [s.courts.length, 'Canchas']]);
+  const html = `
+  ${scheduled ? `<div class="banner ${fits ? 'ok' : 'bad'}"><div class="big">${fmtTime(sum.endTime)}</div><div>
+      <b>Termina a las ${fmtTime(sum.endTime)}: ${fits ? 'cabe en el horario.' : 'no cabe en el horario.'}</b>
+      <div>${fits ? `Te sobran ${diff} minutos antes de las ${fmtTime(sum.limit)}.` : `Se pasa ${diff} minutos de las ${fmtTime(sum.limit)}. Agrega canchas, horas o reduce los minutos por partido.`}</div>
+      ${sum.scheduled < sum.total ? `<div class="small">Hay ${sum.total - sum.scheduled} partido(s) sin programar: vuelve a generar la programación.</div>` : ''}</div></div>` : ''}
+  <div class="tiles">${tiles.map(([n, t]) => `<div class="tile"><b>${n}</b><span>${t}</span></div>`).join('')}</div>
+  <div class="card"><h3 class="eyebrow">Horario y canchas</h3>
     <form id="sform">
-      <div class="fields">
-        <label class="f" style="grid-column:1/-1">Canchas (separadas por coma)<input name="courts" value="${esc(s.courts.join(', '))}" placeholder="Cancha 1, Cancha 2, Cancha 3"></label>
+      <div class="fields" style="grid-template-columns:repeat(auto-fit,minmax(140px,1fr))">
+        <label class="f">Canchas<input name="courts" type="number" min="1" max="30" value="${s.courts.length}"></label>
         <label class="f">Hora de inicio<input name="start" type="time" value="${esc(s.start)}"></label>
         <label class="f">Horas disponibles<input name="hours" type="number" min="0.5" step="0.5" value="${s.hours}"></label>
-        <label class="f">Min. por partido · grupos<input name="mg" type="number" min="5" value="${s.minutes.group}"></label>
-        <label class="f">Min. por partido · semis<input name="ms" type="number" min="5" value="${s.minutes.semi}"></label>
-        <label class="f">Min. por partido · finales<input name="mf" type="number" min="5" value="${s.minutes.final}"></label>
+        <label class="f">Minutos por partido<input name="mm" type="number" min="1" value="${s.minutes.match}"></label>
+        <label class="f">Descanso entre partidos<input name="rest" type="number" min="0" value="${s.rest}"></label>
+        <label class="f">Minutos por final<input name="mf" type="number" min="1" value="${s.minutes.final}"></label>
       </div>
-      <div class="row" style="margin-top:16px"><button class="btn primary">Generar programación</button>
-      <span class="small muted">Reparte ${total} partidos en ${s.courts.length} cancha(s) evitando que un jugador tenga dos partidos a la vez.</span></div>
+      <p class="small muted" style="max-width:640px">Cada turno dura ${s.minutes.match} minutos de juego más ${s.rest} de descanso (los turnos con finales o partidos por puesto duran ${s.minutes.final}).
+        Los partidos de un grupo respetan el orden de las fechas, y las semifinales parten cuando ese nivel termina sus grupos.</p>
+      <div class="row"><button class="btn primary">Generar programación</button></div>
     </form>
     ${notGen.length ? `<div class="notice" style="margin:16px 0 0">Niveles sin fixture (no se programan): ${notGen.map(l => esc(l.name)).join(', ')}.</div>` : ''}
-    ${scheduled ? `<div class="divider"></div><div class="row stats">
-      <div class="stat"><b>${fmtTime(+s.start.split(':')[0] * 60 + +s.start.split(':')[1])}</b><span>Inicio</span></div>
-      <div class="stat"><b style="${lastEnd > limit ? 'color:var(--danger)' : ''}">${fmtTime(lastEnd)}</b><span>Término estimado</span></div>
-      <div class="stat"><b>${fmtTime(limit)}</b><span>Límite disponible</span></div>
-      <div class="stat"><b>${total}</b><span>Partidos</span></div></div>
-      ${lastEnd > limit ? '<div class="notice err" style="margin:14px 0 0">La programación excede las horas disponibles (filas en rojo). Agrega canchas, horas o reduce los minutos por partido.</div>' : ''}` : ''}
   </div>
-  <div class="card"><div class="row" style="margin-bottom:14px"><h3 style="margin:0">Cuadro resumen</h3><span class="spacer"></span>
+  <div class="card"><div class="row" style="margin-bottom:14px"><h3 class="eyebrow" style="margin:0">Programa por cancha</h3><span class="spacer"></span>
+    <span class="small muted">${sum.total} partidos</span>
     <button class="btn sm" data-act="xls">Exportar Excel</button><button class="btn sm" data-act="img">Generar imagen</button></div>
-    ${scheduled ? scheduleTable(T) : '<div class="empty">Configura y presiona "Generar programación".</div>'}</div>
-  <div class="card"><h3>Cierre del torneo</h3>
+    ${scheduled ? scheduleGrid(T) : '<div class="empty">Configura y presiona "Generar programación".</div>'}</div>
+  <div class="card"><h3 class="eyebrow">Cierre del torneo</h3>
     <div class="table-wrap" style="margin-bottom:16px"><table><thead><tr><th>Nivel</th><th>Partidos</th><th>Estado</th></tr></thead><tbody>
     ${T.levels.map(L => `<tr><td class="name">${esc(L.name)}</td><td>${L.matches.filter(m => matchResult(L, m).done).length}/${L.matches.length}</td>
       <td>${levelComplete(L) ? '<span class="badge g">Podio definido</span>' : L.generated ? '<span class="badge y">En juego</span>' : '<span class="badge">Sin fixture</span>'}</td></tr>`).join('') || '<tr><td colspan="3" class="muted">Sin niveles</td></tr>'}
@@ -397,14 +402,14 @@ const programacion = withTournament('Programación', 'Canchas, horarios y cuadro
       e.preventDefault();
       const f = new FormData(e.target);
       Object.assign(s, {
-        courts: f.get('courts').split(',').map(x => x.trim()).filter(Boolean),
-        start: f.get('start') || '09:00', hours: +f.get('hours') || 1,
-        minutes: { group: +f.get('mg') || 20, semi: +f.get('ms') || 30, final: +f.get('mf') || 30 },
+        numCourts: Math.max(1, +f.get('courts') || 1),
+        start: f.get('start') || '09:00', hours: +f.get('hours') || 1, rest: Math.max(0, +f.get('rest') || 0),
+        minutes: { match: +f.get('mm') || 15, final: +f.get('mf') || 20 },
       });
       try {
         const r = buildSchedule(T);
         commit(); rerender();
-        toast(r.overflow ? `Programación generada: ${r.overflow} partido(s) fuera de horario` : 'Programación generada', !!r.overflow);
+        toast(r.fits ? `Programación generada: ${r.turns} turnos` : 'Programación generada, pero no cabe en el horario', !r.fits);
       } catch (err) { toast(err.message, true); }
     },
     async click(e) {
