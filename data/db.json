@@ -99,6 +99,12 @@
    "name": "Andres",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "rg76hezmdq",
+   "name": "Rodrigo",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -135,7 +141,7 @@
        "id": "e3d730exma",
        "name": "",
        "players": [
-        "70ux9pfnel"
+        "rg76hezmdq"
        ],
        "group": 0
       },
@@ -262,21 +268,26 @@
      ],
      "matches": [
       {
-       "id": "2f5j1ki0pb",
+       "id": "nvpdr709c5",
        "phase": "group",
        "a": {
         "players": [
-         "70ux9pfnel",
-         "hapiemh2rf"
+         "bxfjzygdr7",
+         "b0sprsgrsf"
         ]
        },
        "b": {
         "players": [
-         "ketyunfzck",
+         "hapiemh2rf",
          "6bs1wlgnt4"
         ]
        },
-       "games": [],
+       "games": [
+        {
+         "a": 9,
+         "b": 11
+        }
+       ],
        "court": "Cancha 1",
        "time": 1170,
        "group": 0,
@@ -284,21 +295,26 @@
        "turn": 1
       },
       {
-       "id": "ovhdu2i0pb",
+       "id": "kp8kua09c5",
        "phase": "group",
        "a": {
         "players": [
-         "b0sprsgrsf",
-         "upvobpgu0o"
+         "upvobpgu0o",
+         "rg76hezmdq"
         ]
        },
        "b": {
         "players": [
-         "bxfjzygdr7",
-         "2c1yt2g203"
+         "2c1yt2g203",
+         "ketyunfzck"
         ]
        },
-       "games": [],
+       "games": [
+        {
+         "a": 6,
+         "b": 11
+        }
+       ],
        "court": "Cancha 2",
        "time": 1170,
        "group": 0,
@@ -306,21 +322,26 @@
        "turn": 1
       },
       {
-       "id": "vdlo92i0pb",
+       "id": "evkzff09c5",
        "phase": "group",
        "a": {
         "players": [
-         "70ux9pfnel",
+         "hapiemh2rf",
          "bxfjzygdr7"
         ]
        },
        "b": {
         "players": [
-         "ketyunfzck",
-         "b0sprsgrsf"
+         "b0sprsgrsf",
+         "rg76hezmdq"
         ]
        },
-       "games": [],
+       "games": [
+        {
+         "a": 5,
+         "b": 11
+        }
+       ],
        "court": "Cancha 1",
        "time": 1180,
        "group": 0,
@@ -328,7 +349,223 @@
        "turn": 2
       },
       {
-       "id": "0hok4bi0pb",
+       "id": "crlcmf09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "ketyunfzck",
+         "upvobpgu0o"
+        ]
+       },
+       "b": {
+        "players": [
+         "2c1yt2g203",
+         "6bs1wlgnt4"
+        ]
+       },
+       "games": [
+        {
+         "a": 8,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 2",
+       "time": 1180,
+       "group": 0,
+       "round": 2,
+       "turn": 2
+      },
+      {
+       "id": "pmvue909c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "2c1yt2g203",
+         "rg76hezmdq"
+        ]
+       },
+       "b": {
+        "players": [
+         "6bs1wlgnt4",
+         "upvobpgu0o"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 5
+        }
+       ],
+       "court": "Cancha 1",
+       "time": 1190,
+       "group": 0,
+       "round": 3,
+       "turn": 3
+      },
+      {
+       "id": "hidj4109c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "b0sprsgrsf",
+         "hapiemh2rf"
+        ]
+       },
+       "b": {
+        "players": [
+         "bxfjzygdr7",
+         "ketyunfzck"
+        ]
+       },
+       "games": [
+        {
+         "a": 13,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 2",
+       "time": 1190,
+       "group": 0,
+       "round": 3,
+       "turn": 3
+      },
+      {
+       "id": "ugkakk09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "b0sprsgrsf",
+         "ketyunfzck"
+        ]
+       },
+       "b": {
+        "players": [
+         "upvobpgu0o",
+         "bxfjzygdr7"
+        ]
+       },
+       "games": [
+        {
+         "a": 6,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 1",
+       "time": 1200,
+       "group": 0,
+       "round": 4,
+       "turn": 4
+      },
+      {
+       "id": "qb4lyg09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "rg76hezmdq",
+         "6bs1wlgnt4"
+        ]
+       },
+       "b": {
+        "players": [
+         "2c1yt2g203",
+         "hapiemh2rf"
+        ]
+       },
+       "games": [
+        {
+         "a": 13,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 2",
+       "time": 1200,
+       "group": 0,
+       "round": 4,
+       "turn": 4
+      },
+      {
+       "id": "ckvj2x09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "6bs1wlgnt4",
+         "bxfjzygdr7"
+        ]
+       },
+       "b": {
+        "players": [
+         "hapiemh2rf",
+         "upvobpgu0o"
+        ]
+       },
+       "games": [
+        {
+         "a": 9,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 1",
+       "time": 1210,
+       "group": 0,
+       "round": 5,
+       "turn": 5
+      },
+      {
+       "id": "b6n2dr09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "2c1yt2g203",
+         "b0sprsgrsf"
+        ]
+       },
+       "b": {
+        "players": [
+         "rg76hezmdq",
+         "ketyunfzck"
+        ]
+       },
+       "games": [
+        {
+         "a": 6,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 2",
+       "time": 1210,
+       "group": 0,
+       "round": 5,
+       "turn": 5
+      },
+      {
+       "id": "ginyrv09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "6bs1wlgnt4",
+         "b0sprsgrsf"
+        ]
+       },
+       "b": {
+        "players": [
+         "hapiemh2rf",
+         "ketyunfzck"
+        ]
+       },
+       "games": [
+        {
+         "a": 6,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 1",
+       "time": 1220,
+       "group": 0,
+       "round": 6,
+       "turn": 6
+      },
+      {
+       "id": "awnbt209c5",
        "phase": "group",
        "a": {
         "players": [
@@ -338,187 +575,16 @@
        },
        "b": {
         "players": [
-         "6bs1wlgnt4",
-         "hapiemh2rf"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 2",
-       "time": 1180,
-       "group": 0,
-       "round": 2,
-       "turn": 2
-      },
-      {
-       "id": "o5jerpi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "ketyunfzck",
-         "2c1yt2g203"
-        ]
-       },
-       "b": {
-        "players": [
-         "b0sprsgrsf",
-         "6bs1wlgnt4"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 1",
-       "time": 1190,
-       "group": 0,
-       "round": 3,
-       "turn": 3
-      },
-      {
-       "id": "sf7eo3i0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "70ux9pfnel",
-         "upvobpgu0o"
-        ]
-       },
-       "b": {
-        "players": [
-         "bxfjzygdr7",
-         "hapiemh2rf"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 2",
-       "time": 1190,
-       "group": 0,
-       "round": 3,
-       "turn": 3
-      },
-      {
-       "id": "a5fjowi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "hapiemh2rf",
-         "upvobpgu0o"
-        ]
-       },
-       "b": {
-        "players": [
-         "6bs1wlgnt4",
-         "2c1yt2g203"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 1",
-       "time": 1200,
-       "group": 0,
-       "round": 4,
-       "turn": 4
-      },
-      {
-       "id": "2ra6k6i0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "bxfjzygdr7",
-         "ketyunfzck"
-        ]
-       },
-       "b": {
-        "players": [
-         "b0sprsgrsf",
-         "70ux9pfnel"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 2",
-       "time": 1200,
-       "group": 0,
-       "round": 4,
-       "turn": 4
-      },
-      {
-       "id": "c1j3koi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "6bs1wlgnt4",
-         "upvobpgu0o"
-        ]
-       },
-       "b": {
-        "players": [
-         "bxfjzygdr7",
-         "b0sprsgrsf"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 1",
-       "time": 1210,
-       "group": 0,
-       "round": 5,
-       "turn": 5
-      },
-      {
-       "id": "tapfodi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "hapiemh2rf",
-         "2c1yt2g203"
-        ]
-       },
-       "b": {
-        "players": [
-         "70ux9pfnel",
-         "ketyunfzck"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 2",
-       "time": 1210,
-       "group": 0,
-       "round": 5,
-       "turn": 5
-      },
-      {
-       "id": "93uqn2i0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "ketyunfzck",
-         "hapiemh2rf"
-        ]
-       },
-       "b": {
-        "players": [
-         "70ux9pfnel",
-         "6bs1wlgnt4"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 1",
-       "time": 1220,
-       "group": 0,
-       "round": 6,
-       "turn": 6
-      },
-      {
-       "id": "0wfcwbi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "b0sprsgrsf",
-         "2c1yt2g203"
-        ]
-       },
-       "b": {
-        "players": [
-         "upvobpgu0o",
+         "rg76hezmdq",
          "bxfjzygdr7"
         ]
        },
-       "games": [],
+       "games": [
+        {
+         "a": 11,
+         "b": 7
+        }
+       ],
        "court": "Cancha 2",
        "time": 1220,
        "group": 0,
@@ -526,21 +592,26 @@
        "turn": 6
       },
       {
-       "id": "t8l13hi0pb",
+       "id": "rku2fu09c5",
        "phase": "group",
        "a": {
         "players": [
          "upvobpgu0o",
-         "ketyunfzck"
+         "b0sprsgrsf"
         ]
        },
        "b": {
         "players": [
-         "70ux9pfnel",
-         "2c1yt2g203"
+         "2c1yt2g203",
+         "bxfjzygdr7"
         ]
        },
-       "games": [],
+       "games": [
+        {
+         "a": 6,
+         "b": 11
+        }
+       ],
        "court": "Cancha 1",
        "time": 1230,
        "group": 0,
@@ -548,21 +619,26 @@
        "turn": 7
       },
       {
-       "id": "ai4mhki0pb",
+       "id": "rsnptt09c5",
        "phase": "group",
        "a": {
         "players": [
-         "6bs1wlgnt4",
-         "bxfjzygdr7"
+         "rg76hezmdq",
+         "hapiemh2rf"
         ]
        },
        "b": {
         "players": [
-         "hapiemh2rf",
-         "b0sprsgrsf"
+         "ketyunfzck",
+         "6bs1wlgnt4"
         ]
        },
-       "games": [],
+       "games": [
+        {
+         "a": 6,
+         "b": 11
+        }
+       ],
        "court": "Cancha 2",
        "time": 1230,
        "group": 0,
@@ -570,271 +646,223 @@
        "turn": 7
       },
       {
-       "id": "fqgcr6i0pb",
+       "id": "ac0q1x09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "t3g5obhtxj",
+         "c6vxg4hc8u"
+        ]
+       },
+       "b": {
+        "players": [
+         "6xgnx9hyva",
+         "h3g6cbh821"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 8
+        }
+       ],
+       "court": "Cancha 3",
+       "time": 1170,
+       "group": 1,
+       "round": 1,
+       "turn": 1
+      },
+      {
+       "id": "pljjy509c5",
        "phase": "group",
        "a": {
         "players": [
          "4bvgftg32k",
-         "t3g5obhtxj"
-        ]
-       },
-       "b": {
-        "players": [
-         "c6vxg4hc8u",
-         "8uytzthf5p"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 3",
-       "time": 1170,
-       "group": 1,
-       "round": 1,
-       "turn": 1
-      },
-      {
-       "id": "mvjqtci0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "bd2oe0ht0p",
          "bqccpqhp7b"
         ]
        },
        "b": {
-        "players": [
-         "h3g6cbh821",
-         "6xgnx9hyva"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 4",
-       "time": 1170,
-       "group": 1,
-       "round": 1,
-       "turn": 1
-      },
-      {
-       "id": "ou02kqi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "bd2oe0ht0p",
-         "4bvgftg32k"
-        ]
-       },
-       "b": {
-        "players": [
-         "h3g6cbh821",
-         "t3g5obhtxj"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 3",
-       "time": 1180,
-       "group": 1,
-       "round": 2,
-       "turn": 2
-      },
-      {
-       "id": "4isdusi0pb",
-       "phase": "group",
-       "a": {
         "players": [
          "8uytzthf5p",
-         "bqccpqhp7b"
+         "bd2oe0ht0p"
         ]
        },
-       "b": {
-        "players": [
-         "c6vxg4hc8u",
-         "6xgnx9hyva"
-        ]
-       },
-       "games": [],
+       "games": [
+        {
+         "a": 10,
+         "b": 12
+        }
+       ],
        "court": "Cancha 4",
-       "time": 1180,
+       "time": 1170,
        "group": 1,
-       "round": 2,
-       "turn": 2
+       "round": 1,
+       "turn": 1
       },
       {
-       "id": "hw6w2gi0pb",
+       "id": "lqgmyr09c5",
        "phase": "group",
        "a": {
         "players": [
          "bqccpqhp7b",
-         "4bvgftg32k"
-        ]
-       },
-       "b": {
-        "players": [
-         "6xgnx9hyva",
-         "8uytzthf5p"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 3",
-       "time": 1190,
-       "group": 1,
-       "round": 3,
-       "turn": 3
-      },
-      {
-       "id": "v9ch9mi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "c6vxg4hc8u",
-         "h3g6cbh821"
-        ]
-       },
-       "b": {
-        "players": [
-         "bd2oe0ht0p",
-         "t3g5obhtxj"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 4",
-       "time": 1190,
-       "group": 1,
-       "round": 3,
-       "turn": 3
-      },
-      {
-       "id": "g289zni0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "c6vxg4hc8u",
-         "t3g5obhtxj"
-        ]
-       },
-       "b": {
-        "players": [
-         "8uytzthf5p",
-         "4bvgftg32k"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 3",
-       "time": 1200,
-       "group": 1,
-       "round": 4,
-       "turn": 4
-      },
-      {
-       "id": "124ojii0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "6xgnx9hyva",
-         "bqccpqhp7b"
-        ]
-       },
-       "b": {
-        "players": [
-         "bd2oe0ht0p",
-         "h3g6cbh821"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 4",
-       "time": 1200,
-       "group": 1,
-       "round": 4,
-       "turn": 4
-      },
-      {
-       "id": "pm9g7ki0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "c6vxg4hc8u",
-         "4bvgftg32k"
-        ]
-       },
-       "b": {
-        "players": [
-         "t3g5obhtxj",
-         "bqccpqhp7b"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 3",
-       "time": 1210,
-       "group": 1,
-       "round": 5,
-       "turn": 5
-      },
-      {
-       "id": "ne7uuoi0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "6xgnx9hyva",
          "bd2oe0ht0p"
         ]
        },
        "b": {
         "players": [
-         "8uytzthf5p",
-         "h3g6cbh821"
-        ]
-       },
-       "games": [],
-       "court": "Cancha 4",
-       "time": 1210,
-       "group": 1,
-       "round": 5,
-       "turn": 5
-      },
-      {
-       "id": "mfs35ui0pb",
-       "phase": "group",
-       "a": {
-        "players": [
-         "6xgnx9hyva",
+         "4bvgftg32k",
          "t3g5obhtxj"
         ]
        },
+       "games": [
+        {
+         "a": 8,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 3",
+       "time": 1180,
+       "group": 1,
+       "round": 2,
+       "turn": 2
+      },
+      {
+       "id": "dl70vk09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "h3g6cbh821",
+         "c6vxg4hc8u"
+        ]
+       },
        "b": {
+        "players": [
+         "6xgnx9hyva",
+         "8uytzthf5p"
+        ]
+       },
+       "games": [
+        {
+         "a": 12,
+         "b": 14
+        }
+       ],
+       "court": "Cancha 4",
+       "time": 1180,
+       "group": 1,
+       "round": 2,
+       "turn": 2
+      },
+      {
+       "id": "xobq7w09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "h3g6cbh821",
+         "8uytzthf5p"
+        ]
+       },
+       "b": {
+        "players": [
+         "t3g5obhtxj",
+         "bd2oe0ht0p"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 8
+        }
+       ],
+       "court": "Cancha 3",
+       "time": 1190,
+       "group": 1,
+       "round": 3,
+       "turn": 3
+      },
+      {
+       "id": "ix2o1209c5",
+       "phase": "group",
+       "a": {
         "players": [
          "bqccpqhp7b",
          "c6vxg4hc8u"
         ]
        },
-       "games": [],
-       "court": "Cancha 3",
-       "time": 1220,
+       "b": {
+        "players": [
+         "4bvgftg32k",
+         "6xgnx9hyva"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 7
+        }
+       ],
+       "court": "Cancha 4",
+       "time": 1190,
        "group": 1,
-       "round": 6,
-       "turn": 6
+       "round": 3,
+       "turn": 3
       },
       {
-       "id": "xn2w6ti0pb",
+       "id": "yfwxxt09c5",
        "phase": "group",
        "a": {
         "players": [
-         "4bvgftg32k",
-         "h3g6cbh821"
+         "6xgnx9hyva",
+         "bd2oe0ht0p"
         ]
        },
        "b": {
         "players": [
-         "8uytzthf5p",
-         "bd2oe0ht0p"
+         "h3g6cbh821",
+         "t3g5obhtxj"
         ]
        },
-       "games": [],
-       "court": "Cancha 4",
-       "time": 1220,
+       "games": [
+        {
+         "a": 11,
+         "b": 3
+        }
+       ],
+       "court": "Cancha 3",
+       "time": 1200,
        "group": 1,
-       "round": 6,
-       "turn": 6
+       "round": 4,
+       "turn": 4
       },
       {
-       "id": "w5u37pi0pb",
+       "id": "z7fhgf09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "8uytzthf5p",
+         "bqccpqhp7b"
+        ]
+       },
+       "b": {
+        "players": [
+         "c6vxg4hc8u",
+         "4bvgftg32k"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 9
+        }
+       ],
+       "court": "Cancha 4",
+       "time": 1200,
+       "group": 1,
+       "round": 4,
+       "turn": 4
+      },
+      {
+       "id": "ca9kq509c5",
        "phase": "group",
        "a": {
         "players": [
@@ -844,11 +872,124 @@
        },
        "b": {
         "players": [
+         "8uytzthf5p",
+         "c6vxg4hc8u"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 9
+        }
+       ],
+       "court": "Cancha 3",
+       "time": 1210,
+       "group": 1,
+       "round": 5,
+       "turn": 5
+      },
+      {
+       "id": "gzhtib09c5",
+       "phase": "group",
+       "a": {
+        "players": [
          "6xgnx9hyva",
+         "t3g5obhtxj"
+        ]
+       },
+       "b": {
+        "players": [
+         "4bvgftg32k",
+         "bd2oe0ht0p"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 9
+        }
+       ],
+       "court": "Cancha 4",
+       "time": 1210,
+       "group": 1,
+       "round": 5,
+       "turn": 5
+      },
+      {
+       "id": "srwerc09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "8uytzthf5p",
          "4bvgftg32k"
         ]
        },
-       "games": [],
+       "b": {
+        "players": [
+         "6xgnx9hyva",
+         "c6vxg4hc8u"
+        ]
+       },
+       "games": [
+        {
+         "a": 7,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 3",
+       "time": 1220,
+       "group": 1,
+       "round": 6,
+       "turn": 6
+      },
+      {
+       "id": "f1odzg09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "bd2oe0ht0p",
+         "h3g6cbh821"
+        ]
+       },
+       "b": {
+        "players": [
+         "bqccpqhp7b",
+         "t3g5obhtxj"
+        ]
+       },
+       "games": [
+        {
+         "a": 9,
+         "b": 11
+        }
+       ],
+       "court": "Cancha 4",
+       "time": 1220,
+       "group": 1,
+       "round": 6,
+       "turn": 6
+      },
+      {
+       "id": "wojtba09c5",
+       "phase": "group",
+       "a": {
+        "players": [
+         "t3g5obhtxj",
+         "8uytzthf5p"
+        ]
+       },
+       "b": {
+        "players": [
+         "h3g6cbh821",
+         "4bvgftg32k"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 8
+        }
+       ],
        "court": "Cancha 3",
        "time": 1230,
        "group": 1,
@@ -856,21 +997,26 @@
        "turn": 7
       },
       {
-       "id": "43rjt4i0pb",
+       "id": "hl8rj509c5",
        "phase": "group",
        "a": {
+        "players": [
+         "bqccpqhp7b",
+         "6xgnx9hyva"
+        ]
+       },
+       "b": {
         "players": [
          "c6vxg4hc8u",
          "bd2oe0ht0p"
         ]
        },
-       "b": {
-        "players": [
-         "t3g5obhtxj",
-         "8uytzthf5p"
-        ]
-       },
-       "games": [],
+       "games": [
+        {
+         "a": 7,
+         "b": 11
+        }
+       ],
        "court": "Cancha 4",
        "time": 1230,
        "group": 1,
@@ -878,11 +1024,26 @@
        "turn": 7
       },
       {
-       "id": "2qi902i0pb",
+       "id": "1c6b5u09c6",
        "phase": "final",
-       "a": null,
-       "b": null,
-       "games": [],
+       "a": {
+        "players": [
+         "2c1yt2g203",
+         "ketyunfzck"
+        ]
+       },
+       "b": {
+        "players": [
+         "8uytzthf5p",
+         "t3g5obhtxj"
+        ]
+       },
+       "games": [
+        {
+         "a": 17,
+         "b": 19
+        }
+       ],
        "court": "Cancha 4",
        "time": 1240,
        "place": 1,
@@ -891,11 +1052,26 @@
        "turn": 8
       },
       {
-       "id": "17ddd5i0pb",
+       "id": "2000kb09c6",
        "phase": "third",
-       "a": null,
-       "b": null,
-       "games": [],
+       "a": {
+        "players": [
+         "rg76hezmdq",
+         "6bs1wlgnt4"
+        ]
+       },
+       "b": {
+        "players": [
+         "c6vxg4hc8u",
+         "6xgnx9hyva"
+        ]
+       },
+       "games": [
+        {
+         "a": 11,
+         "b": 15
+        }
+       ],
        "court": "Cancha 3",
        "time": 1240,
        "place": 3,
@@ -904,11 +1080,26 @@
        "turn": 8
       },
       {
-       "id": "0h3fbki0pb",
+       "id": "cq9nec09c6",
        "phase": "place",
-       "a": null,
-       "b": null,
-       "games": [],
+       "a": {
+        "players": [
+         "hapiemh2rf",
+         "upvobpgu0o"
+        ]
+       },
+       "b": {
+        "players": [
+         "bqccpqhp7b",
+         "bd2oe0ht0p"
+        ]
+       },
+       "games": [
+        {
+         "a": 6,
+         "b": 15
+        }
+       ],
        "court": "Cancha 1",
        "time": 1240,
        "place": 5,
@@ -917,11 +1108,26 @@
        "turn": 8
       },
       {
-       "id": "65a8lui0pb",
+       "id": "w5mczi09c6",
        "phase": "place",
-       "a": null,
-       "b": null,
-       "games": [],
+       "a": {
+        "players": [
+         "bxfjzygdr7",
+         "b0sprsgrsf"
+        ]
+       },
+       "b": {
+        "players": [
+         "h3g6cbh821",
+         "4bvgftg32k"
+        ]
+       },
+       "games": [
+        {
+         "a": 14,
+         "b": 16
+        }
+       ],
        "court": "Cancha 2",
        "time": 1240,
        "place": 7,
@@ -948,9 +1154,9 @@
      "final": 10
     },
     "rest": 0,
-    "generatedAt": "2026-10-30T20:35:00.316Z"
+    "generatedAt": "2026-10-30T22:38:46.221Z"
    }
   }
  ],
- "updatedAt": "2026-10-30T20:35:00.316Z"
+ "updatedAt": "2026-10-30T23:57:01.129Z"
 }
