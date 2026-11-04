@@ -141,6 +141,27 @@ export async function reloadRemote() {
   return store.db;
 }
 
+// Descarta la copia local y usa los datos en línea.
+export async function adoptRemote() {
+  const remote = await fetchRemote();
+  if (!remote) return false;
+  store.db = normalize(remote);
+  writeLocal(false);
+  setStatus('saved', 'Sincronizado');
+  return true;
+}
+
+export const hasLocalChanges = () => !!readLocal()?.dirty;
+
+// Verifica que el token pueda escribir en el repositorio.
+export async function checkToken() {
+  try {
+    const r = await fetch(`https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}`, { headers: headers(), cache: 'no-store' });
+    if (!r.ok) return false;
+    return !!(await r.json()).permissions?.push;
+  } catch { return false; }
+}
+
 export function replaceDB(db) { store.db = normalize(db); save(); }
 
 export async function sha256(text) {

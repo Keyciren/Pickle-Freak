@@ -1,4 +1,4 @@
-import { store, load, sha256 } from './store.js';
+import { store, load, sha256, setToken, checkToken, adoptRemote, hasLocalChanges } from './store.js';
 import { bindPlayers } from './logic.js';
 import { $, toast, on } from './ui.js';
 import { adminViews, ADMIN_NAV } from './admin.js';
@@ -36,6 +36,29 @@ function login() {
   });
 }
 
+// Vincular un dispositivo: el token llega en el enlace del código QR (#/vincular/<token>).
+async function link(token) {
+  history.replaceState(null, '', location.pathname + '#/vincular');
+  app.innerHTML = '<div class="login card"><img src="assets/logo.png" alt="PickleFreak"><h2>Vinculando dispositivo…</h2></div>';
+  if (!token) { location.hash = '#/admin'; return; }
+  setToken(token);
+  const ok = await checkToken();
+  if (!ok) {
+    setToken('');
+    app.innerHTML = `<div class="login card"><img src="assets/logo.png" alt="PickleFreak"><h2>No se pudo vincular</h2>
+      <p class="muted">El código no es válido o el token venció. Genera un código nuevo desde Ajustes en el computador.</p>
+      <a class="btn" href="#/">Volver al inicio</a></div>`;
+    return;
+  }
+  // Los cambios solo locales de este dispositivo podrían pisar los datos en línea: se usan los de la nube.
+  if (!hasLocalChanges() || confirm('Este dispositivo tiene cambios guardados solo aquí. ¿Descartarlos y usar los datos en línea? (Recomendado)')) await adoptRemote();
+  else { const { sync } = await import('./store.js'); await sync(); }
+  bindPlayers(store.db.players);
+  app.innerHTML = `<div class="login card"><img src="assets/logo.png" alt="PickleFreak"><h2>¡Dispositivo vinculado!</h2>
+    <p class="muted">Desde ahora, los resultados que ingreses aquí se guardan en línea automáticamente.</p>
+    <a class="btn primary" href="#/admin">Ingresar como administrador</a></div>`;
+}
+
 function renderNav(area, view) {
   const nav = $('#nav'), sync = $('#sync');
   if (area === 'admin' && isAdmin()) {
@@ -50,6 +73,7 @@ function renderNav(area, view) {
 
 function route() {
   const [area, view] = location.hash.replace(/^#\/?/, '').split('/');
+  if (area === 'vincular') { renderNav(); return link(location.hash.split('/').slice(2).join('/')); }
   if (area === 'salir') { sessionStorage.removeItem('pf_admin'); location.hash = '#/'; return; }
   renderNav(area, view);
   window.scrollTo(0, 0);

@@ -468,6 +468,16 @@ function historico(app) {
 
 /* ---------- Ajustes ---------- */
 
+let showQR = false;
+const linkURL = tok => `${location.origin}${location.pathname}#/vincular/${tok}`;
+function qrSVG(text) {
+  if (!window.qrcode) return '<p class="small muted">Cargando generador de QR… vuelve a presionar el botón.</p>';
+  const qr = window.qrcode(0, 'M');
+  qr.addData(text);
+  qr.make();
+  return qr.createSvgTag({ cellSize: 5, margin: 3, scalable: true });
+}
+
 function ajustes(app) {
   const rerender = () => ajustes(app);
   const tok = getToken();
@@ -488,6 +498,13 @@ function ajustes(app) {
           ${tok ? '<button type="button" class="btn" data-act="sync">Sincronizar ahora</button><button type="button" class="btn ghost danger" data-act="untoken">Quitar token</button>' : ''}</div>
         </form>
         <p class="small" style="margin-bottom:0">Estado: <b>${esc(store.statusMsg || store.status)}</b></p></div>
+      <div class="card"><h3>Vincular celular u otro dispositivo</h3>
+        ${tok ? `<p class="small muted">Escanea este código con la cámara del celular para que también guarde en línea, sin crear otro token.
+          Muéstralo solo a quien deba administrar: da permiso para modificar los datos.</p>
+          <div class="row"><button class="btn primary" data-act="qr">${showQR ? 'Ocultar código' : 'Mostrar código QR'}</button>
+          ${showQR ? '<button class="btn" data-act="copylink">Copiar enlace</button>' : ''}</div>
+          ${showQR ? `<div class="qr">${qrSVG(linkURL(tok))}</div>` : ''}`
+          : '<p class="small muted" style="margin:0">Primero guarda un token en este computador. Luego aquí aparecerá un código QR para vincular el celular.</p>'}</div>
       <div class="card"><h3>Respaldo</h3><p class="small muted">Descarga o restaura toda la base de datos en formato JSON.</p>
         <div class="row"><button class="btn" data-act="backup">Descargar respaldo</button>
         <label class="btn">Restaurar respaldo<input type="file" id="restore" accept="application/json" hidden></label></div></div>
@@ -513,6 +530,10 @@ function ajustes(app) {
     async click(e) {
       const act = e.target.closest('[data-act]')?.dataset.act;
       if (act === 'sync') { const ok = await sync(); toast(ok ? 'Sincronizado' : store.statusMsg, !ok); rerender(); }
+      if (act === 'qr') { showQR = !showQR; rerender(); }
+      if (act === 'copylink') {
+        try { await navigator.clipboard.writeText(linkURL(getToken())); toast('Enlace copiado'); } catch { toast('No se pudo copiar', true); }
+      }
       if (act === 'untoken') { setToken(''); rerender(); toast('Token eliminado de este navegador'); }
       if (act === 'backup') {
         const a = document.createElement('a');
