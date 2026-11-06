@@ -261,6 +261,12 @@
    "name": "Miriam K",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "lqv6iictev",
+   "name": "Juan Ricardo San Matin",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1835,7 +1841,8 @@
        "id": "3cp6iq61j0",
        "name": "",
        "players": [
-        "0a9tkmcjoc"
+        "0a9tkmcjoc",
+        "lqv6iictev"
        ],
        "group": null
       },
@@ -1896,5 +1903,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:37:57.660Z"
+ "updatedAt": "2026-11-06T17:38:10.279Z"
 }
