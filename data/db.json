@@ -285,6 +285,12 @@
    "name": "Juan Pablo Diaz",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "gegvgydylg",
+   "name": "Adriana Rufin",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1877,7 +1883,8 @@
        "id": "baba7c61j0",
        "name": "",
        "players": [
-        "5jw32ydu9h"
+        "5jw32ydu9h",
+        "gegvgydylg"
        ],
        "group": 0
       },
@@ -1926,5 +1933,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:58.037Z"
+ "updatedAt": "2026-11-06T17:39:03.652Z"
 }
