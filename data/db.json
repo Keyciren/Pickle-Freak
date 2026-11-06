@@ -189,6 +189,12 @@
    "name": "Sofia Escobar",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "db6nmn9o8j",
+   "name": "jose Rocha",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1337,9 +1343,10 @@
        "id": "gqp3fk5yr3",
        "name": "",
        "players": [
-        "4uc3u49k4n"
+        "4uc3u49k4n",
+        "db6nmn9o8j"
        ],
-       "group": null
+       "group": 0
       },
       {
        "id": "nomyme5yr3",
@@ -1459,5 +1466,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:35:38.279Z"
+ "updatedAt": "2026-11-06T17:35:44.170Z"
 }
