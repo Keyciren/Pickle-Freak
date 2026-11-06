@@ -105,6 +105,12 @@
    "name": "Rodrigo",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "8960lk68bs",
+   "name": "Maca la Mejor",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1189,7 +1195,9 @@
       {
        "id": "ge6hwb5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "8960lk68bs"
+       ],
        "group": null
       },
       {
@@ -1352,5 +1360,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:32:54.204Z"
+ "updatedAt": "2026-11-06T17:33:03.016Z"
 }
