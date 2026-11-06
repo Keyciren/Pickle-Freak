@@ -333,6 +333,12 @@
    "name": "Ricardo Motles",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "m0225jfotu",
+   "name": "Lili Gendelman",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1934,7 +1940,7 @@
        "id": "0n54hj61j0",
        "name": "",
        "players": [
-        "txen7ae8d2"
+        "m0225jfotu"
        ],
        "group": 0
       },
@@ -1986,5 +1992,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:40:12.681Z"
+ "updatedAt": "2026-11-06T17:40:24.306Z"
 }
