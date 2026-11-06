@@ -159,6 +159,12 @@
    "name": "Sebastián Miranda",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "vf6a8f88i6",
+   "name": "Pame",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1280,7 +1286,8 @@
        "id": "ujn5jc5yr3",
        "name": "",
        "players": [
-        "x0mgxg83el"
+        "x0mgxg83el",
+        "vf6a8f88i6"
        ],
        "group": null
       },
@@ -1420,5 +1427,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:34:29.949Z"
+ "updatedAt": "2026-11-06T17:34:36.558Z"
 }
