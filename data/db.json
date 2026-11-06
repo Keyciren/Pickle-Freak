@@ -267,6 +267,12 @@
    "name": "Juan Ricardo San Matin",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "bhrxaod0ee",
+   "name": "Daniel Posch",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1849,7 +1855,9 @@
       {
        "id": "ttq5d561j0",
        "name": "",
-       "players": [],
+       "players": [
+        "bhrxaod0ee"
+       ],
        "group": null
       },
       {
@@ -1903,5 +1911,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:12.036Z"
+ "updatedAt": "2026-11-06T17:38:19.334Z"
 }
