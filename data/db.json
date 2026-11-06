@@ -117,6 +117,12 @@
    "name": "Tomas Ramirez",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "snrpef6nzq",
+   "name": "Tere",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1210,7 +1216,9 @@
       {
        "id": "mut86u5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "snrpef6nzq"
+       ],
        "group": null
       },
       {
@@ -1367,5 +1375,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:33:17.678Z"
+ "updatedAt": "2026-11-06T17:33:23.318Z"
 }
