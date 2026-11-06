@@ -183,6 +183,12 @@
    "name": "Sebastián de Adraca",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "4uc3u49k4n",
+   "name": "Sofia Escobar",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1330,7 +1336,9 @@
       {
        "id": "gqp3fk5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "4uc3u49k4n"
+       ],
        "group": null
       },
       {
@@ -1451,5 +1459,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:35:26.738Z"
+ "updatedAt": "2026-11-06T17:35:38.279Z"
 }
