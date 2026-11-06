@@ -141,6 +141,12 @@
    "name": "Vicky Vega",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "9g7a9i7gsl",
+   "name": "Nicolás Gutierrez",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1252,7 +1258,9 @@
       {
        "id": "6ecsa85yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "9g7a9i7gsl"
+       ],
        "group": null
       },
       {
@@ -1397,5 +1405,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:33:52.121Z"
+ "updatedAt": "2026-11-06T17:34:00.645Z"
 }
