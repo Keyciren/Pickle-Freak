@@ -237,6 +237,12 @@
    "name": "Paula Swanston",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "0wscv0bt5z",
+   "name": "JC Acuña",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1793,9 +1799,10 @@
        "id": "7hzaxl61j0",
        "name": "",
        "players": [
-        "c8t08kbqyx"
+        "c8t08kbqyx",
+        "0wscv0bt5z"
        ],
-       "group": null
+       "group": 0
       },
       {
        "id": "rcdnlg61j0",
@@ -1866,5 +1873,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:37:20.458Z"
+ "updatedAt": "2026-11-06T17:37:24.656Z"
 }
