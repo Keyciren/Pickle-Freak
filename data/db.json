@@ -1883,7 +1883,7 @@
        "id": "8ygjbv61j0",
        "name": "",
        "players": [],
-       "group": null
+       "group": 0
       },
       {
        "id": "fem2v961j0",
@@ -1918,5 +1918,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:32.131Z"
+ "updatedAt": "2026-11-06T17:38:35.445Z"
 }
