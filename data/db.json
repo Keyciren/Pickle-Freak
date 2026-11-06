@@ -111,6 +111,12 @@
    "name": "Maca la Mejor",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "vf5g1m6f96",
+   "name": "Tomas Ramirez",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1196,7 +1202,8 @@
        "id": "ge6hwb5yr3",
        "name": "",
        "players": [
-        "8960lk68bs"
+        "8960lk68bs",
+        "vf5g1m6f96"
        ],
        "group": null
       },
@@ -1360,5 +1367,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:33:03.016Z"
+ "updatedAt": "2026-11-06T17:33:11.994Z"
 }
