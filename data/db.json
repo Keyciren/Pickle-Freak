@@ -321,6 +321,12 @@
    "name": "Patricia",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "nqnkm1f0gi",
+   "name": "Luz María Hamilton",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1947,7 +1953,9 @@
       {
        "id": "jafapz61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "nqnkm1f0gi"
+       ],
        "group": 1
       }
      ],
@@ -1971,5 +1979,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:44.893Z"
+ "updatedAt": "2026-11-06T17:39:52.722Z"
 }
