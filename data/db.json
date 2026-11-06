@@ -123,6 +123,12 @@
    "name": "Tere",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "wra9k96sqy",
+   "name": "Vicente Labbe",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1217,7 +1223,8 @@
        "id": "mut86u5yr3",
        "name": "",
        "players": [
-        "snrpef6nzq"
+        "snrpef6nzq",
+        "wra9k96sqy"
        ],
        "group": null
       },
@@ -1375,5 +1382,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:33:23.318Z"
+ "updatedAt": "2026-11-06T17:33:29.482Z"
 }
