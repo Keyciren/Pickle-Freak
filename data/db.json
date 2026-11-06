@@ -339,6 +339,12 @@
    "name": "Lili Gendelman",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "73cmhyfuko",
+   "name": "Cristian Muñoz",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1940,7 +1946,8 @@
        "id": "0n54hj61j0",
        "name": "",
        "players": [
-        "m0225jfotu"
+        "m0225jfotu",
+        "73cmhyfuko"
        ],
        "group": 0
       },
@@ -1992,5 +1999,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:40:24.306Z"
+ "updatedAt": "2026-11-06T17:40:31.752Z"
 }
