@@ -129,6 +129,12 @@
    "name": "Vicente Labbe",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "8zskam6yop",
+   "name": "Edu Fuenzalida",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1231,7 +1237,9 @@
       {
        "id": "dio3dx5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "8zskam6yop"
+       ],
        "group": null
       },
       {
@@ -1382,5 +1390,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:33:31.450Z"
+ "updatedAt": "2026-11-06T17:33:37.177Z"
 }
