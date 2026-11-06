@@ -471,7 +471,7 @@ function historico(app) {
 let showQR = false;
 const linkURL = tok => `${location.origin}${location.pathname}#/vincular/${tok}`;
 function qrSVG(text) {
-  if (!window.qrcode) return '<p class="small muted">Cargando generador de QR… vuelve a presionar el botón.</p>';
+  if (!window.qrcode) return '<p class="small muted">No se pudo generar el código. Usa "Copiar enlace" y ábrelo en el celular.</p>';
   const qr = window.qrcode(0, 'M');
   qr.addData(text);
   qr.make();
@@ -502,9 +502,9 @@ function ajustes(app) {
         ${tok ? `<p class="small muted">Escanea este código con la cámara del celular para que también guarde en línea, sin crear otro token.
           Muéstralo solo a quien deba administrar: da permiso para modificar los datos.</p>
           <div class="row"><button class="btn primary" data-act="qr">${showQR ? 'Ocultar código' : 'Mostrar código QR'}</button>
-          ${showQR ? '<button class="btn" data-act="copylink">Copiar enlace</button>' : ''}</div>
+          <button class="btn" data-act="copylink">Copiar enlace</button></div>
           ${showQR ? `<div class="qr">${qrSVG(linkURL(tok))}</div>` : ''}`
-          : '<p class="small muted" style="margin:0">Primero guarda un token en este computador. Luego aquí aparecerá un código QR para vincular el celular.</p>'}</div>
+          : '<p class="small muted" style="margin:0">Este dispositivo todavía no guarda en línea, por eso no muestra el código. Abre <b>Ajustes</b> en el computador donde arriba dice <b>"Guardado"</b> (punto verde): ahí aparece el botón <b>Mostrar código QR</b> para escanearlo con este celular.</p>'}</div>
       <div class="card"><h3>Respaldo</h3><p class="small muted">Descarga o restaura toda la base de datos en formato JSON.</p>
         <div class="row"><button class="btn" data-act="backup">Descargar respaldo</button>
         <label class="btn">Restaurar respaldo<input type="file" id="restore" accept="application/json" hidden></label></div></div>
