@@ -309,6 +309,12 @@
    "name": "Andrea Perez",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "83e3zuespq",
+   "name": "Carlos Diaz",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1926,7 +1932,9 @@
       {
        "id": "fem2v961j0",
        "name": "",
-       "players": [],
+       "players": [
+        "83e3zuespq"
+       ],
        "group": 0
       },
       {
@@ -1956,5 +1964,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:34.018Z"
+ "updatedAt": "2026-11-06T17:39:42.686Z"
 }
