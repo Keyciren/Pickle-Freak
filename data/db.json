@@ -327,6 +327,12 @@
    "name": "Luz María Hamilton",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "yugbymffuw",
+   "name": "Ricardo Motles",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1954,7 +1960,8 @@
        "id": "jafapz61j0",
        "name": "",
        "players": [
-        "nqnkm1f0gi"
+        "nqnkm1f0gi",
+        "yugbymffuw"
        ],
        "group": 1
       }
@@ -1979,5 +1986,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:52.722Z"
+ "updatedAt": "2026-11-06T17:40:12.681Z"
 }
