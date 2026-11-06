@@ -249,6 +249,12 @@
    "name": "María Alejandra Astorga",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "tm7ylzcc4m",
+   "name": "Andrea Beau",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1814,7 +1820,8 @@
        "id": "rcdnlg61j0",
        "name": "",
        "players": [
-        "6a2zxzc2ph"
+        "6a2zxzc2ph",
+        "tm7ylzcc4m"
        ],
        "group": null
       },
@@ -1881,5 +1888,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:37:35.670Z"
+ "updatedAt": "2026-11-06T17:37:47.878Z"
 }
