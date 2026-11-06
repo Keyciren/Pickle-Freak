@@ -65,6 +65,42 @@ export function sideLabel(L, side, placeholder = 'Por definir') {
   return entryName(L, entryById(L, side.entryId));
 }
 
+// Nombre provisorio de un lado aún no definido (ej: "1° Grupo A").
+export function placeholder(L, m, s) {
+  if (m.phase === 'semi' && !isAA(L) && groupCount(L) === 2) {
+    const [x, y] = m.slot === 'SF2' ? ['B', 'A'] : ['A', 'B'];
+    return s === 'a' ? `1° Grupo ${x}` : `2° Grupo ${y}`;
+  }
+  return (s === 'a' ? m.phA : m.phB) || 'Por definir';
+}
+
+/* ---------- Validación de puntajes ---------- */
+
+// Un juego se gana llegando a N puntos con 2 de diferencia; sobre N, solo por exactamente 2.
+// a o b pueden venir vacíos (''): en ese caso solo se revisa lo que ya se puede saber.
+export function gameError(a, b, N) {
+  const has = v => v !== '' && v != null;
+  for (const v of [a, b]) if (has(v) && (!Number.isInteger(+v) || +v < 0)) return 'El puntaje debe ser un número entero, 0 o mayor.';
+  if (!has(a) || !has(b)) return null;
+  const hi = Math.max(+a, +b), lo = Math.min(+a, +b);
+  if (hi === lo) return 'No puede haber empate: el juego se gana por 2 puntos de diferencia.';
+  if (hi < N) return `El juego es a ${N} puntos: el ganador debe llegar a ${N}.`;
+  if (hi === N && lo > N - 2) return `Con ${hi}-${lo} el juego sigue: se gana por 2 de diferencia (ej: ${N + 1}-${N - 1}).`;
+  if (hi > N && hi - lo !== 2) return `Sobre ${N} puntos solo se gana por 2 de diferencia: con ${hi}, el otro debe tener ${hi - 2}.`;
+  return null;
+}
+
+// En "mejor de 3", el tercer juego solo se juega si los dos primeros quedaron 1-1.
+export function thirdGameNeeded(L, m) {
+  if (+fmtFor(L, m).bestOf !== 3) return false;
+  const w = [0, 1].map(i => {
+    const g = m.games?.[i];
+    if (!g || g.a === '' || g.b === '' || g.a == null || g.b == null) return null;
+    return +g.a > +g.b ? 'a' : +g.b > +g.a ? 'b' : null;
+  });
+  return !(w[0] && w[0] === w[1]);
+}
+
 const mkMatch = (phase, a, b, extra = {}) => ({ id: uid(), phase, a, b, games: [], court: null, time: null, ...extra });
 
 /* ---------- Generación de fixture ---------- */
@@ -287,7 +323,11 @@ function fillSemis(L, sf) {
     const s = qualifiers(L, 4);
     if (s.length < 4) return;
     let pairs = [[s[0], s[3]], [s[1], s[2]]];
-    if (groupCount(L) > 1 && s[0].group === s[3].group && s[0].group !== s[2].group) pairs = [[s[0], s[2]], [s[1], s[3]]];
+    if (groupCount(L) === 2) {
+      // SF1: 1° Grupo A vs 2° Grupo B · SF2: 1° Grupo B vs 2° Grupo A
+      const at = (g, r) => s.find(x => x.group === g && x.rank === r);
+      if (at(0, 0) && at(1, 1) && at(1, 0) && at(0, 1)) pairs = [[at(0, 0), at(1, 1)], [at(1, 0), at(0, 1)]];
+    } else if (groupCount(L) > 1 && s[0].group === s[3].group && s[0].group !== s[2].group) pairs = [[s[0], s[2]], [s[1], s[3]]];
     sf[0].a = { entryId: pairs[0][0].key }; sf[0].b = { entryId: pairs[0][1].key };
     sf[1].a = { entryId: pairs[1][0].key }; sf[1].b = { entryId: pairs[1][1].key };
   }

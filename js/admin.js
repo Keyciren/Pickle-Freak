@@ -2,7 +2,7 @@
 import { store, getToken, setToken, sync, sha256, replaceDB } from './store.js';
 import {
   uid, MODES, newLevel, newTournament, groupName, groupCount, entryNoun, generateLevel, assignRandomGroups,
-  advance, buildSchedule, scheduleCfg, scheduleSummary, levelComplete, tournamentComplete, matchResult, podium, isAA,
+  advance, gameError, thirdGameNeeded, fmtFor, buildSchedule, scheduleCfg, scheduleSummary, levelComplete, tournamentComplete, matchResult, podium, isAA,
 } from './logic.js';
 import { esc, fmtTime, fmtDate, formatText, levelSummary, groupBlocks, finalsBlock, podiumHTML, scheduleGrid } from './render.js';
 import { $, $$, db, on, toast, commit, pref, findOrCreatePlayer, activeTournaments, currentTournament, setCurrentTournament, keepFocus, norm } from './ui.js';
@@ -325,7 +325,7 @@ const grupos = withTournament('Grupos', 'Tabla de posiciones, fechas y resultado
       <div class="stat"><b>${played}/${L.matches.length}</b><span>Partidos jugados</span></div>
       <div class="stat"><b>${MODES[L.mode]}</b><span>Modalidad</span></div>
       <div class="stat"><b>${groupCount(L)}</b><span>${groupCount(L) > 1 ? 'Grupos' : 'Grupo'}</span></div>
-      <span class="spacer"></span><span class="small muted">Ingresa el puntaje de cada juego. Ej: 11 y 7.</span></div></div>
+      <span class="spacer"></span><span class="small muted">Ingresa el puntaje de cada juego. Se gana llegando al puntaje del partido con 2 de diferencia (ej: 15-13, 17-15).</span></div></div>
     ${podiumHTML(L)}${groupBlocks(L, { editable: true })}${finalsBlock(L, { editable: true })}`;
   return {
     html,
@@ -336,7 +336,17 @@ const grupos = withTournament('Grupos', 'Tabla de posiciones, fechas y resultado
       const m = L.matches.find(x => x.id === t.dataset.mid);
       const g = +t.dataset.g;
       m.games ||= [];
-      m.games[g] = { ...(m.games[g] || { a: '', b: '' }), [t.dataset.s]: t.value === '' ? '' : Math.max(0, +t.value) };
+      const next = { ...(m.games[g] || { a: '', b: '' }), [t.dataset.s]: t.value === '' ? '' : +t.value };
+      const err = gameError(next.a, next.b, +fmtFor(L, m).points);
+      if (err) {
+        toast(err, true);
+        rerender();
+        const el = document.getElementById(t.id);
+        if (el) { el.classList.add('bad'); el.focus(); el.select(); }
+        return;
+      }
+      m.games[g] = next;
+      if (!thirdGameNeeded(L, m) && m.games[2]) m.games[2] = { a: '', b: '' };
       const before = JSON.stringify(L.matches.filter(x => x.phase !== 'group').map(x => [x.a, x.b]));
       advance(L);
       commit();

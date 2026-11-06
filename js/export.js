@@ -1,10 +1,10 @@
 // Exportación a Excel (SheetJS) e imagen PNG (html2canvas).
-import { groupName, groupCount, standings, matchResult, sideLabel, podium, MODES, isAA } from './logic.js';
+import { groupName, groupCount, standings, matchResult, sideLabel, podium, MODES, isAA, placeholder } from './logic.js';
 import { esc, fmtTime, fmtDate, phaseLabel, scoreText, scheduleRows } from './render.js';
 
 const slug = s => String(s).normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^\w]+/g, '_').replace(/^_|_$/g, '');
 const fileBase = T => `PickleFreak_${slug(T.name)}_${T.date}`;
-const label = (L, m, s) => m[s] ? sideLabel(L, m[s]) : (s === 'a' ? m.phA : m.phB) || 'Por definir';
+const label = (L, m, s) => m[s] ? sideLabel(L, m[s]) : placeholder(L, m, s);
 
 export function exportExcel(T) {
   if (!window.XLSX) throw new Error('La librería de Excel aún no carga. Intenta de nuevo.');

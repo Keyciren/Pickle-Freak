@@ -1,7 +1,7 @@
 // Componentes de solo lectura compartidos por las vistas de admin, jugador e histórico.
 import {
   MODES, groupName, groupCount, standings, matchResult, sideLabel, sidePlayers, podium, fmtFor,
-  isAA, gameScores, durationOf, entryNoun, aaPlacement, toMin,
+  isAA, gameScores, durationOf, entryNoun, aaPlacement, toMin, placeholder, thirdGameNeeded,
 } from './logic.js';
 
 export const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -59,18 +59,20 @@ export function matchCard(L, m, { editable = false, pids = null, showLevel = nul
       const o = m.games?.[i]?.[s === 'a' ? 'b' : 'a'] ?? '';
       if (editable) {
         games.push(`<input class="sc" type="number" inputmode="numeric" min="0" max="99" id="g-${m.id}-${i}-${s}"
-          data-mid="${m.id}" data-g="${i}" data-s="${s}" value="${esc(v)}" ${ready ? '' : 'disabled'} aria-label="Juego ${i + 1}">`);
+          data-mid="${m.id}" data-g="${i}" data-s="${s}" value="${esc(v)}" ${ready && (i < 2 || thirdGameNeeded(L, m)) ? '' : 'disabled'}
+          aria-label="Juego ${i + 1}" title="Juego ${i + 1} · a ${f.points} pts, gana por 2">`);
       } else {
         const win = v !== '' && o !== '' && +v > +o;
         games.push(`<span class="scv ${win ? 'w' : ''}">${v === '' ? (i === 0 ? '–' : '') : esc(v)}</span>`);
       }
     }
-    const label = sd ? sideLabel(L, sd) : (s === 'a' ? m.phA : m.phB) || 'Por definir';
+    const label = sd ? sideLabel(L, sd) : placeholder(L, m, s);
     return `<div class="side ${r.winner === s ? 'win' : ''} ${sd ? '' : 'tbd'}"><span class="nm" title="${esc(label)}">${esc(label)}</span>${games.join('')}</div>`;
   };
   const where = m.time != null ? `${fmtTime(m.time)} · ${esc(m.court || '')}` : '';
   return `<div class="match ${matchHas(L, m, pids) ? 'hl' : ''}">
     <div class="meta"><span>${showLevel ? esc(showLevel) + ' · ' : ''}${esc(phaseLabel(m))}</span><span>${where}</span></div>
+    ${editable && nGames > 1 ? `<div class="gh"><span></span>${Array.from({ length: nGames }, (_, i) => `<span>J${i + 1}</span>`).join('')}</div>` : ''}
     ${side('a')}${side('b')}</div>`;
 }
 
@@ -130,7 +132,7 @@ export function scheduleGrid(T, pids = null) {
   const cell = r => {
     if (!r) return '<td></td>';
     const { L, m } = r, res = matchResult(L, m), sc = gameScores(m).map(([a, b]) => `${a}–${b}`).join(', ');
-    const name = s => esc(m[s] ? sideLabel(L, m[s]) : (s === 'a' ? m.phA : m.phB) || 'Por definir');
+    const name = s => esc(m[s] ? sideLabel(L, m[s]) : placeholder(L, m, s));
     const nm = s => `<span class="${res.winner === s ? 'w' : ''} ${m[s] ? '' : 'tbd'}">${name(s)}</span>`;
     return `<td><div class="slot ${matchHas(L, m, pids) ? 'hl' : ''} ${res.done ? 'done' : ''}">
       <div class="slot-meta"><b>${esc(L.name)}</b> · ${esc(phaseLabel(m))}</div>
