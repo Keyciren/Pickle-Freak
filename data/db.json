@@ -195,6 +195,12 @@
    "name": "jose Rocha",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "7mlirpa9ln",
+   "name": "Luisa Ibaceta",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1351,7 +1357,9 @@
       {
        "id": "nomyme5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "7mlirpa9ln"
+       ],
        "group": null
       },
       {
@@ -1466,5 +1474,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:36:04.572Z"
+ "updatedAt": "2026-11-06T17:36:11.291Z"
 }
