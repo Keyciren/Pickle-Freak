@@ -1188,6 +1188,30 @@
      "entries": [],
      "matches": [],
      "generated": false
+    },
+    {
+     "id": "ycc4rb56t3",
+     "name": "Senior",
+     "mode": "doubles",
+     "numEntries": 10,
+     "numGroups": 2,
+     "formats": {
+      "group": {
+       "bestOf": 1,
+       "points": 15
+      },
+      "semi": {
+       "bestOf": 1,
+       "points": 15
+      },
+      "final": {
+       "bestOf": 3,
+       "points": 15
+      }
+     },
+     "entries": [],
+     "matches": [],
+     "generated": false
     }
    ],
    "schedule": {
@@ -1206,5 +1230,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:30:42.882Z"
+ "updatedAt": "2026-11-06T17:32:14.391Z"
 }
