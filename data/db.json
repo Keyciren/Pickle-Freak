@@ -1895,7 +1895,7 @@
        "id": "jafapz61j0",
        "name": "",
        "players": [],
-       "group": null
+       "group": 1
       }
      ],
      "matches": [],
@@ -1918,5 +1918,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:45.250Z"
+ "updatedAt": "2026-11-06T17:38:48.378Z"
 }
