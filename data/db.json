@@ -303,6 +303,12 @@
    "name": "Daniel Bacingalupe",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "9yertaem0y",
+   "name": "Andrea Perez",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1912,7 +1918,8 @@
        "id": "8ygjbv61j0",
        "name": "",
        "players": [
-        "7htjdfejia"
+        "7htjdfejia",
+        "9yertaem0y"
        ],
        "group": 0
       },
@@ -1949,5 +1956,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:30.755Z"
+ "updatedAt": "2026-11-06T17:39:34.018Z"
 }
