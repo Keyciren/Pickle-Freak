@@ -165,6 +165,12 @@
    "name": "Pame",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "jbcut88wcz",
+   "name": "Luis Zamorano",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1295,7 +1301,8 @@
        "id": "igtte95yr3",
        "name": "",
        "players": [
-        "t3g5obhtxj"
+        "t3g5obhtxj",
+        "jbcut88wcz"
        ],
        "group": null
       },
@@ -1429,5 +1436,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:34:58.694Z"
+ "updatedAt": "2026-11-06T17:35:07.475Z"
 }
