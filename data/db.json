@@ -273,6 +273,12 @@
    "name": "Daniel Posch",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "bf1djkd59w",
+   "name": "Josefina Mendez",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1856,7 +1862,8 @@
        "id": "ttq5d561j0",
        "name": "",
        "players": [
-        "bhrxaod0ee"
+        "bhrxaod0ee",
+        "bf1djkd59w"
        ],
        "group": null
       },
@@ -1911,5 +1918,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:19.334Z"
+ "updatedAt": "2026-11-06T17:38:25.652Z"
 }
