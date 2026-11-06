@@ -1156,7 +1156,30 @@
     "rest": 0,
     "generatedAt": "2026-10-30T22:38:46.221Z"
    }
+  },
+  {
+   "id": "44l2q222ux",
+   "name": "Mini Torneo Aniversario",
+   "date": "2026-11-07",
+   "status": "active",
+   "createdAt": "2026-11-06T17:29:49.305Z",
+   "finishedAt": null,
+   "levels": [],
+   "schedule": {
+    "numCourts": 2,
+    "courts": [
+     "Cancha 1",
+     "Cancha 2"
+    ],
+    "start": "09:00",
+    "hours": 8,
+    "minutes": {
+     "match": 15,
+     "final": 20
+    },
+    "rest": 0
+   }
   }
  ],
- "updatedAt": "2026-11-06T17:28:42.062Z"
+ "updatedAt": "2026-11-06T17:29:49.305Z"
 }
