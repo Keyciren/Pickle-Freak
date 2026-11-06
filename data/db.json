@@ -225,6 +225,12 @@
    "name": "Gisselle Heise",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "fqwp3dbd3c",
+   "name": "Eugenio Navarrete",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1772,7 +1778,8 @@
        "id": "hiphch61j0",
        "name": "",
        "players": [
-        "5qhnzub9ff"
+        "5qhnzub9ff",
+        "fqwp3dbd3c"
        ],
        "group": null
       },
@@ -1851,5 +1858,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:36:57.723Z"
+ "updatedAt": "2026-11-06T17:37:02.472Z"
 }
