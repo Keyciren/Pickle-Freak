@@ -279,6 +279,12 @@
    "name": "Josefina Mendez",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "5jw32ydu9h",
+   "name": "Juan Pablo Diaz",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1870,7 +1876,9 @@
       {
        "id": "baba7c61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "5jw32ydu9h"
+       ],
        "group": 0
       },
       {
@@ -1918,5 +1926,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:48.378Z"
+ "updatedAt": "2026-11-06T17:38:58.037Z"
 }
