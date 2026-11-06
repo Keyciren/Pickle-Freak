@@ -315,6 +315,12 @@
    "name": "Carlos Diaz",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "25sjdweuf0",
+   "name": "Patricia",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1933,7 +1939,8 @@
        "id": "fem2v961j0",
        "name": "",
        "players": [
-        "83e3zuespq"
+        "83e3zuespq",
+        "25sjdweuf0"
        ],
        "group": 0
       },
@@ -1964,5 +1971,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:42.686Z"
+ "updatedAt": "2026-11-06T17:39:44.893Z"
 }
