@@ -243,6 +243,12 @@
    "name": "JC Acuña",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "6a2zxzc2ph",
+   "name": "María Alejandra Astorga",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1807,7 +1813,9 @@
       {
        "id": "rcdnlg61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "6a2zxzc2ph"
+       ],
        "group": null
       },
       {
@@ -1873,5 +1881,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:37:27.789Z"
+ "updatedAt": "2026-11-06T17:37:35.670Z"
 }
