@@ -201,6 +201,12 @@
    "name": "Luisa Ibaceta",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "x481guabyk",
+   "name": "Javier Garrido",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1358,9 +1364,10 @@
        "id": "nomyme5yr3",
        "name": "",
        "players": [
-        "7mlirpa9ln"
+        "7mlirpa9ln",
+        "x481guabyk"
        ],
-       "group": null
+       "group": 0
       },
       {
        "id": "m98r575yr3",
@@ -1474,5 +1481,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:36:11.291Z"
+ "updatedAt": "2026-11-06T17:36:15.632Z"
 }
