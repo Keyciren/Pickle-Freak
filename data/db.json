@@ -177,6 +177,12 @@
    "name": "Javiera Diaz",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "8tpgp49aq8",
+   "name": "Sebastián de Adraca",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1316,9 +1322,10 @@
        "id": "yztx9h5yr3",
        "name": "",
        "players": [
-        "tlymsv93hn"
+        "tlymsv93hn",
+        "8tpgp49aq8"
        ],
-       "group": null
+       "group": 0
       },
       {
        "id": "gqp3fk5yr3",
@@ -1444,5 +1451,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:35:16.715Z"
+ "updatedAt": "2026-11-06T17:35:26.738Z"
 }
