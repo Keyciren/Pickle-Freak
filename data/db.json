@@ -255,6 +255,12 @@
    "name": "Andrea Beau",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "0a9tkmcjoc",
+   "name": "Miriam K",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1828,7 +1834,9 @@
       {
        "id": "3cp6iq61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "0a9tkmcjoc"
+       ],
        "group": null
       },
       {
@@ -1888,5 +1896,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:37:51.576Z"
+ "updatedAt": "2026-11-06T17:37:57.660Z"
 }
