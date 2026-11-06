@@ -171,6 +171,12 @@
    "name": "Luis Zamorano",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "tlymsv93hn",
+   "name": "Javiera Diaz",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1309,7 +1315,9 @@
       {
        "id": "yztx9h5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "tlymsv93hn"
+       ],
        "group": null
       },
       {
@@ -1436,5 +1444,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:35:10.381Z"
+ "updatedAt": "2026-11-06T17:35:16.715Z"
 }
