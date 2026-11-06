@@ -291,6 +291,12 @@
    "name": "Adriana Rufin",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "txen7ae8d2",
+   "name": "Abraham Cohen",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1891,7 +1897,9 @@
       {
        "id": "0n54hj61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "txen7ae8d2"
+       ],
        "group": 0
       },
       {
@@ -1933,5 +1941,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:03.652Z"
+ "updatedAt": "2026-11-06T17:39:16.310Z"
 }
