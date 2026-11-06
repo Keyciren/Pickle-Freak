@@ -57,11 +57,27 @@ export function viewer(el, T, st) {
 }
 
 const st = { tab: 'pos', level: null, q: '' };
+
+// Mientras se mira la vista jugador, se buscan datos nuevos cada 2 minutos.
+let poll = null;
+function startPolling(app) {
+  clearInterval(poll);
+  poll = setInterval(async () => {
+    if (!location.hash.startsWith('#/jugador')) { clearInterval(poll); return; }
+    if (document.activeElement?.id === 'vq') return;
+    const before = db().updatedAt;
+    await reloadRemote();
+    if (db().updatedAt !== before) { bindPlayers(db().players); playerView(app); }
+  }, 120000);
+}
+
 export function playerView(app) {
+  startPolling(app);
   const list = [...db().tournaments].sort((a, b) => (a.status === 'finished') - (b.status === 'finished') || b.date.localeCompare(a.date));
   const T = list.find(t => t.id === pref.get('pf_ptour')) || list[0];
   app.innerHTML = `<div class="page-head"><div><h1>Torneos</h1><p>Posiciones, programación y puntajes. Busca tu nombre para destacar tus partidos.</p></div>
-      <button class="btn" data-act="refresh">↻ Actualizar</button></div>
+      <div style="text-align:right"><button class="btn" data-act="refresh">↻ Actualizar</button>
+      ${db().updatedAt ? `<div class="small muted" style="margin-top:6px">Datos al ${new Date(db().updatedAt).toLocaleString('es-CL', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</div>` : ''}</div></div>
     ${list.length ? `<div class="card tight"><label class="f">Torneo<select id="ptour">${list.map(t => `<option value="${t.id}" ${t.id === T.id ? 'selected' : ''}>
         ${esc(fmtDate(t.date))} · ${esc(t.name)} ${t.status === 'finished' ? '(finalizado)' : '(en curso)'}</option>`).join('')}</select></label>
       ${T.levels.length ? `<p class="small muted" style="margin:10px 0 0">${T.levels.map(L => `${esc(L.name)} · ${MODES[L.mode]}`).join(' &nbsp;|&nbsp; ')}</p>` : ''}</div>

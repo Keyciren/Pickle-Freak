@@ -56,33 +56,48 @@ function readLocal() {
 }
 function writeLocal(dirty) { ls.set(LS_DB, JSON.stringify({ db: store.db, dirty })); }
 
+const newer = (a, b) => String(a?.updatedAt || '') > String(b?.updatedAt || '');
+
+// Lee la base en línea por dos vías (API de GitHub y archivo publicado) y usa la más reciente.
+// La API puede fallar por el límite de lecturas anónimas; el archivo publicado no tiene ese límite.
 async function fetchRemote() {
-  try {
+  const viaApi = (async () => {
     const r = await fetch(`${apiUrl()}?ref=${CONFIG.branch}`, { headers: headers(), cache: 'no-store' });
-    if (r.ok) {
-      const j = await r.json();
-      store.sha = j.sha;
-      return JSON.parse(dec(j.content));
-    }
-  } catch { /* sigue con respaldo */ }
-  try {
-    const r = await fetch(`${CONFIG.dbPath}?t=${Date.now()}`, { cache: 'no-store' });
-    if (r.ok) return await r.json();
-  } catch { /* sin conexión */ }
-  return null;
+    if (!r.ok) return null;
+    const j = await r.json();
+    store.sha = j.sha;
+    return JSON.parse(dec(j.content));
+  })().catch(() => null);
+  const viaPages = fetch(`${CONFIG.dbPath}?t=${Date.now()}`, { cache: 'no-store' })
+    .then(r => r.ok ? r.json() : null).catch(() => null);
+  const [api, pages] = await Promise.all([viaApi, viaPages]);
+  if (api && pages) return newer(pages, api) ? pages : api;
+  return api || pages;
+}
+
+// Si hay cambios solo locales pero la nube tiene datos más nuevos (hechos desde otro dispositivo),
+// se usan los de la nube y la copia local queda respaldada.
+function pick(local, remote) {
+  if (local?.dirty && !(remote && newer(remote, local.db))) return 'local';
+  if (remote) {
+    if (local?.dirty) ls.set(LS_DB + '_respaldo', JSON.stringify(local.db));
+    return 'remote';
+  }
+  return local ? 'local' : 'empty';
 }
 
 export async function load() {
   const local = readLocal();
   const remote = await fetchRemote();
-  if (local?.dirty) {
+  const choice = pick(local, remote);
+  if (choice === 'local' && local.dirty) {
     store.db = normalize(local.db);
     if (getToken()) sync(); else setStatus('local', 'Cambios guardados solo en este navegador');
-  } else if (remote) {
+  } else if (choice === 'remote') {
     store.db = normalize(remote);
     writeLocal(false);
     setStatus('saved', 'Sincronizado');
-  } else if (local) {
+  } else if (choice === 'local') {
     store.db = normalize(local.db);
     setStatus('local', 'Sin conexión: usando copia local');
   } else {
@@ -136,8 +151,7 @@ export async function sync() {
 
 export async function reloadRemote() {
   const remote = await fetchRemote();
-  const local = readLocal();
-  if (remote && !local?.dirty) { store.db = normalize(remote); writeLocal(false); }
+  if (pick(readLocal(), remote) === 'remote') { store.db = normalize(remote); writeLocal(false); }
   return store.db;
 }
 
