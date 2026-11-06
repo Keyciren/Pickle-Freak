@@ -1871,13 +1871,13 @@
        "id": "baba7c61j0",
        "name": "",
        "players": [],
-       "group": null
+       "group": 0
       },
       {
        "id": "0n54hj61j0",
        "name": "",
        "players": [],
-       "group": null
+       "group": 0
       },
       {
        "id": "8ygjbv61j0",
@@ -1918,5 +1918,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:38:27.570Z"
+ "updatedAt": "2026-11-06T17:38:32.131Z"
 }
