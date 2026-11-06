@@ -1185,7 +1185,68 @@
        "points": 15
       }
      },
-     "entries": [],
+     "entries": [
+      {
+       "id": "ge6hwb5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "mut86u5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "dio3dx5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "6ecsa85yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "ujn5jc5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "igtte95yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "yztx9h5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "gqp3fk5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "nomyme5yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      },
+      {
+       "id": "m98r575yr3",
+       "name": "",
+       "players": [],
+       "group": null
+      }
+     ],
      "matches": [],
      "generated": false
     },
@@ -1230,5 +1291,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:32:41.489Z"
+ "updatedAt": "2026-11-06T17:32:50.607Z"
 }
