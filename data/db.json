@@ -153,6 +153,12 @@
    "name": "Karli Acuña",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "x0mgxg83el",
+   "name": "Sebastián Miranda",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1273,7 +1279,9 @@
       {
        "id": "ujn5jc5yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "x0mgxg83el"
+       ],
        "group": null
       },
       {
@@ -1412,5 +1420,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:34:10.217Z"
+ "updatedAt": "2026-11-06T17:34:29.949Z"
 }
