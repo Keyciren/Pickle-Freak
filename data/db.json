@@ -135,6 +135,12 @@
    "name": "Edu Fuenzalida",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "hypxg772so",
+   "name": "Vicky Vega",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1238,9 +1244,10 @@
        "id": "dio3dx5yr3",
        "name": "",
        "players": [
-        "8zskam6yop"
+        "8zskam6yop",
+        "hypxg772so"
        ],
-       "group": null
+       "group": 0
       },
       {
        "id": "6ecsa85yr3",
@@ -1390,5 +1397,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:33:37.177Z"
+ "updatedAt": "2026-11-06T17:33:43.713Z"
 }
