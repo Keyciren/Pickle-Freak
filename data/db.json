@@ -213,6 +213,12 @@
    "name": "Fio Bacingalupo",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "mj53vmaur3",
+   "name": "Franz Lintz",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1379,7 +1385,8 @@
        "id": "m98r575yr3",
        "name": "",
        "players": [
-        "m7537saouj"
+        "m7537saouj",
+        "mj53vmaur3"
        ],
        "group": null
       }
@@ -1489,5 +1496,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:36:31.051Z"
+ "updatedAt": "2026-11-06T17:36:38.703Z"
 }
