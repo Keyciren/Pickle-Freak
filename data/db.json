@@ -297,6 +297,12 @@
    "name": "Abraham Cohen",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "7htjdfejia",
+   "name": "Daniel Bacingalupe",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1905,7 +1911,9 @@
       {
        "id": "8ygjbv61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "7htjdfejia"
+       ],
        "group": 0
       },
       {
@@ -1941,5 +1949,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:39:16.310Z"
+ "updatedAt": "2026-11-06T17:39:30.755Z"
 }
