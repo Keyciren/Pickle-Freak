@@ -3,6 +3,7 @@ import { reloadRemote } from './store.js';
 import { bindPlayers, sidePlayers, MODES } from './logic.js';
 import { esc, fmtDate, tournamentDetail, matchCard } from './render.js';
 import { $, db, on, toast, norm, pref } from './ui.js';
+import { exportScheduleImage } from './export.js';
 
 const TABS = [['pos', 'Posiciones'], ['prog', 'Programación'], ['res', 'Puntajes']];
 
@@ -23,6 +24,7 @@ export function viewer(el, T, st) {
       ${T.levels.length > 1 && st.tab !== 'prog' ? `<span style="width:1px;background:var(--border);margin:0 4px"></span>
         <button class="chip ${!st.level ? 'active' : ''}" data-vlvl="">Todos los niveles</button>
         ${T.levels.map(L => `<button class="chip ${st.level === L.id ? 'active' : ''}" data-vlvl="${L.id}">${esc(L.name)}</button>`).join('')}` : ''}
+      ${st.tab === 'prog' ? '<span class="spacer"></span><button class="btn sm" data-act="simg">Descargar imagen</button>' : ''}
     </div>
     <div id="vbody"></div>`;
   const body = $('#vbody', el);
@@ -45,7 +47,11 @@ export function viewer(el, T, st) {
   };
   draw();
   return {
-    click(e) {
+    async click(e) {
+      if (e.target.closest('[data-act=simg]')) {
+        try { toast('Generando imagen…'); await exportScheduleImage(T); } catch (err) { toast(err.message, true); }
+        return;
+      }
       const t = e.target.closest('[data-tab],[data-vlvl]');
       if (!t) return;
       if (t.dataset.tab) st.tab = t.dataset.tab;

@@ -6,7 +6,7 @@ import {
 } from './logic.js';
 import { esc, fmtTime, fmtDate, formatText, levelSummary, groupBlocks, finalsBlock, podiumHTML, scheduleGrid } from './render.js';
 import { $, $$, db, on, toast, commit, pref, findOrCreatePlayer, activeTournaments, currentTournament, setCurrentTournament, keepFocus, norm } from './ui.js';
-import { exportExcel, exportImage } from './export.js';
+import { exportExcel, exportImage, exportScheduleImage } from './export.js';
 import { viewer } from './player.js';
 
 export const ADMIN_NAV = [
@@ -394,7 +394,7 @@ const programacion = withTournament('Programación', 'Canchas, horarios y progra
   </div>
   <div class="card"><div class="row" style="margin-bottom:14px"><h3 class="eyebrow" style="margin:0">Programa por cancha</h3><span class="spacer"></span>
     <span class="small muted">${sum.total} partidos</span>
-    <button class="btn sm" data-act="xls">Exportar Excel</button><button class="btn sm" data-act="img">Generar imagen</button></div>
+    <button class="btn sm primary" data-act="simg">Imagen de programación</button><button class="btn sm" data-act="xls">Exportar Excel</button></div>
     ${scheduled ? scheduleGrid(T) : '<div class="empty">Configura y presiona "Generar programación".</div>'}</div>
   <div class="card"><h3 class="eyebrow">Cierre del torneo</h3>
     <div class="table-wrap" style="margin-bottom:16px"><table><thead><tr><th>Nivel</th><th>Partidos</th><th>Estado</th></tr></thead><tbody>
@@ -427,6 +427,7 @@ const programacion = withTournament('Programación', 'Canchas, horarios y progra
       try {
         if (act === 'xls') exportExcel(T);
         if (act === 'img') { toast('Generando imagen…'); await exportImage(T); }
+        if (act === 'simg') { toast('Generando imagen…'); await exportScheduleImage(T); }
       } catch (err) { toast(err.message, true); }
       if (act === 'finish' && confirm(`¿Guardar "${T.name}" en el historial? El torneo quedará como finalizado.`)) {
         T.status = 'finished'; T.finishedAt = new Date().toISOString();
