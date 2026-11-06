@@ -219,6 +219,12 @@
    "name": "Franz Lintz",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "5qhnzub9ff",
+   "name": "Gisselle Heise",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1765,7 +1771,9 @@
       {
        "id": "hiphch61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "5qhnzub9ff"
+       ],
        "group": null
       },
       {
@@ -1843,5 +1851,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:36:42.703Z"
+ "updatedAt": "2026-11-06T17:36:57.723Z"
 }
