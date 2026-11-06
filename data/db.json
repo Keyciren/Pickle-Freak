@@ -147,6 +147,12 @@
    "name": "Nicolás Gutierrez",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "5d0m8s7n0g",
+   "name": "Karli Acuña",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1259,9 +1265,10 @@
        "id": "6ecsa85yr3",
        "name": "",
        "players": [
-        "9g7a9i7gsl"
+        "9g7a9i7gsl",
+        "5d0m8s7n0g"
        ],
-       "group": null
+       "group": 0
       },
       {
        "id": "ujn5jc5yr3",
@@ -1405,5 +1412,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:34:00.645Z"
+ "updatedAt": "2026-11-06T17:34:10.217Z"
 }
