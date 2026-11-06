@@ -1164,7 +1164,32 @@
    "status": "active",
    "createdAt": "2026-11-06T17:29:49.305Z",
    "finishedAt": null,
-   "levels": [],
+   "levels": [
+    {
+     "id": "6a3vuo3876",
+     "name": "Open",
+     "mode": "doubles",
+     "numEntries": 10,
+     "numGroups": 2,
+     "formats": {
+      "group": {
+       "bestOf": 1,
+       "points": 11
+      },
+      "semi": {
+       "bestOf": 1,
+       "points": 15
+      },
+      "final": {
+       "bestOf": 3,
+       "points": 11
+      }
+     },
+     "entries": [],
+     "matches": [],
+     "generated": false
+    }
+   ],
    "schedule": {
     "numCourts": 2,
     "courts": [
@@ -1181,5 +1206,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:29:49.305Z"
+ "updatedAt": "2026-11-06T17:30:42.882Z"
 }
