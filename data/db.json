@@ -1294,7 +1294,9 @@
       {
        "id": "igtte95yr3",
        "name": "",
-       "players": [],
+       "players": [
+        "t3g5obhtxj"
+       ],
        "group": null
       },
       {
@@ -1427,5 +1429,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:34:38.277Z"
+ "updatedAt": "2026-11-06T17:34:58.694Z"
 }
