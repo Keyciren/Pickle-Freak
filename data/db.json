@@ -231,6 +231,12 @@
    "name": "Eugenio Navarrete",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "c8t08kbqyx",
+   "name": "Paula Swanston",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1786,7 +1792,9 @@
       {
        "id": "7hzaxl61j0",
        "name": "",
-       "players": [],
+       "players": [
+        "c8t08kbqyx"
+       ],
        "group": null
       },
       {
@@ -1858,5 +1866,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:37:08.200Z"
+ "updatedAt": "2026-11-06T17:37:20.458Z"
 }
