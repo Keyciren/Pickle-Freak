@@ -2553,7 +2553,12 @@
        "b": {
         "entryId": "hiphch61j0"
        },
-       "games": [],
+       "games": [
+        {
+         "a": 15,
+         "b": 12
+        }
+       ],
        "court": "Cancha 3",
        "time": 730,
        "slot": "SF1",
@@ -2586,8 +2591,12 @@
       {
        "id": "fzbi3x89uj",
        "phase": "third",
-       "a": null,
-       "b": null,
+       "a": {
+        "entryId": "hiphch61j0"
+       },
+       "b": {
+        "entryId": "fem2v961j0"
+       },
        "games": [],
        "court": "Cancha 2",
        "time": 745,
@@ -2598,8 +2607,12 @@
       {
        "id": "d6k2ys89uj",
        "phase": "final",
-       "a": null,
-       "b": null,
+       "a": {
+        "entryId": "rcdnlg61j0"
+       },
+       "b": {
+        "entryId": "ttq5d561j0"
+       },
        "games": [],
        "court": "Cancha 4",
        "time": 745,
@@ -2630,5 +2643,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T15:21:23.592Z"
+ "updatedAt": "2026-11-07T15:22:50.124Z"
 }
