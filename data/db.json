@@ -2535,7 +2535,7 @@
        "games": [
         {
          "a": 15,
-         "b": ""
+         "b": 3
         }
        ],
        "court": "Cancha 4",
@@ -2547,8 +2547,12 @@
       {
        "id": "wsu77f89uj",
        "phase": "semi",
-       "a": null,
-       "b": null,
+       "a": {
+        "entryId": "rcdnlg61j0"
+       },
+       "b": {
+        "entryId": "hiphch61j0"
+       },
        "games": [],
        "court": "Cancha 3",
        "time": 730,
@@ -2560,8 +2564,12 @@
       {
        "id": "ok37kr89uj",
        "phase": "semi",
-       "a": null,
-       "b": null,
+       "a": {
+        "entryId": "ttq5d561j0"
+       },
+       "b": {
+        "entryId": "fem2v961j0"
+       },
        "games": [],
        "court": "Cancha 4",
        "time": 730,
@@ -2617,5 +2625,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T15:01:46.706Z"
+ "updatedAt": "2026-11-07T15:01:49.823Z"
 }
