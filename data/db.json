@@ -2615,7 +2615,12 @@
        "b": {
         "entryId": "fem2v961j0"
        },
-       "games": [],
+       "games": [
+        {
+         "a": 13,
+         "b": 15
+        }
+       ],
        "court": "Cancha 2",
        "time": 745,
        "phA": "Perdedor SF1",
@@ -2661,5 +2666,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T15:29:27.264Z"
+ "updatedAt": "2026-11-07T15:37:44.109Z"
 }
