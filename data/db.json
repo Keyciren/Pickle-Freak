@@ -1803,7 +1803,12 @@
        "b": {
         "entryId": "nomyme5yr3"
        },
-       "games": [],
+       "games": [
+        {
+         "a": 15,
+         "b": 10
+        }
+       ],
        "court": "Cancha 3",
        "time": 640,
        "group": 1,
@@ -2494,5 +2499,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T13:51:25.254Z"
+ "updatedAt": "2026-11-07T13:54:25.024Z"
 }
