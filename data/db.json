@@ -2015,8 +2015,355 @@
        "group": 1
       }
      ],
-     "matches": [],
-     "generated": false
+     "matches": [
+      {
+       "id": "nndeky89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "baba7c61j0"
+       },
+       "b": {
+        "entryId": "fem2v961j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 1
+      },
+      {
+       "id": "fhxn2d89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "0n54hj61j0"
+       },
+       "b": {
+        "entryId": "8ygjbv61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 1
+      },
+      {
+       "id": "8umefq89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "fem2v961j0"
+       },
+       "b": {
+        "entryId": "rcdnlg61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 2
+      },
+      {
+       "id": "7onh5389uj",
+       "phase": "group",
+       "a": {
+        "entryId": "0n54hj61j0"
+       },
+       "b": {
+        "entryId": "baba7c61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 2
+      },
+      {
+       "id": "ghes7789uj",
+       "phase": "group",
+       "a": {
+        "entryId": "rcdnlg61j0"
+       },
+       "b": {
+        "entryId": "8ygjbv61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 3
+      },
+      {
+       "id": "h1lf8789uj",
+       "phase": "group",
+       "a": {
+        "entryId": "fem2v961j0"
+       },
+       "b": {
+        "entryId": "0n54hj61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 3
+      },
+      {
+       "id": "1ytszh89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "0n54hj61j0"
+       },
+       "b": {
+        "entryId": "rcdnlg61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 4
+      },
+      {
+       "id": "um7khv89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "baba7c61j0"
+       },
+       "b": {
+        "entryId": "8ygjbv61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 4
+      },
+      {
+       "id": "220ccz89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "rcdnlg61j0"
+       },
+       "b": {
+        "entryId": "baba7c61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 5
+      },
+      {
+       "id": "iecs6l89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "8ygjbv61j0"
+       },
+       "b": {
+        "entryId": "fem2v961j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 0,
+       "round": 5
+      },
+      {
+       "id": "le2t0w89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "7hzaxl61j0"
+       },
+       "b": {
+        "entryId": "jafapz61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 1
+      },
+      {
+       "id": "2zt4kc89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "3cp6iq61j0"
+       },
+       "b": {
+        "entryId": "ttq5d561j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 1
+      },
+      {
+       "id": "pe6xtt89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "jafapz61j0"
+       },
+       "b": {
+        "entryId": "hiphch61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 2
+      },
+      {
+       "id": "if2c7a89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "3cp6iq61j0"
+       },
+       "b": {
+        "entryId": "7hzaxl61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 2
+      },
+      {
+       "id": "6hl38e89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "hiphch61j0"
+       },
+       "b": {
+        "entryId": "ttq5d561j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 3
+      },
+      {
+       "id": "dsg2ot89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "jafapz61j0"
+       },
+       "b": {
+        "entryId": "3cp6iq61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 3
+      },
+      {
+       "id": "63k1mv89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "3cp6iq61j0"
+       },
+       "b": {
+        "entryId": "hiphch61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 4
+      },
+      {
+       "id": "xu9x5889uj",
+       "phase": "group",
+       "a": {
+        "entryId": "7hzaxl61j0"
+       },
+       "b": {
+        "entryId": "ttq5d561j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 4
+      },
+      {
+       "id": "96wft789uj",
+       "phase": "group",
+       "a": {
+        "entryId": "hiphch61j0"
+       },
+       "b": {
+        "entryId": "7hzaxl61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 5
+      },
+      {
+       "id": "191lnj89uj",
+       "phase": "group",
+       "a": {
+        "entryId": "ttq5d561j0"
+       },
+       "b": {
+        "entryId": "jafapz61j0"
+       },
+       "games": [],
+       "court": null,
+       "time": null,
+       "group": 1,
+       "round": 5
+      },
+      {
+       "id": "wsu77f89uj",
+       "phase": "semi",
+       "a": null,
+       "b": null,
+       "games": [],
+       "court": null,
+       "time": null,
+       "slot": "SF1",
+       "phA": "Clasificado 1",
+       "phB": "Clasificado 4"
+      },
+      {
+       "id": "ok37kr89uj",
+       "phase": "semi",
+       "a": null,
+       "b": null,
+       "games": [],
+       "court": null,
+       "time": null,
+       "slot": "SF2",
+       "phA": "Clasificado 2",
+       "phB": "Clasificado 3"
+      },
+      {
+       "id": "fzbi3x89uj",
+       "phase": "third",
+       "a": null,
+       "b": null,
+       "games": [],
+       "court": null,
+       "time": null,
+       "phA": "Perdedor SF1",
+       "phB": "Perdedor SF2"
+      },
+      {
+       "id": "d6k2ys89uj",
+       "phase": "final",
+       "a": null,
+       "b": null,
+       "games": [],
+       "court": null,
+       "time": null,
+       "phA": "Ganador SF1",
+       "phB": "Ganador SF2"
+      }
+     ],
+     "generated": true
     }
    ],
    "schedule": {
@@ -2038,5 +2385,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T12:41:41.576Z"
+ "updatedAt": "2026-11-07T12:42:22.555Z"
 }
