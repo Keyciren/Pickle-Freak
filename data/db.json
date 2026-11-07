@@ -345,6 +345,12 @@
    "name": "Cristian Muñoz",
    "email": "",
    "rut": ""
+  },
+  {
+   "id": "70d6tjy5b7",
+   "name": "Paula Castro",
+   "email": "",
+   "rut": ""
   }
  ],
  "tournaments": [
@@ -1457,8 +1463,8 @@
        "id": "6ecsa85yr3",
        "name": "",
        "players": [
-        "9g7a9i7gsl",
-        "5d0m8s7n0g"
+        "8uytzthf5p",
+        "70d6tjy5b7"
        ],
        "group": 0
       },
@@ -2397,5 +2403,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-06T17:41:58.039Z"
+ "updatedAt": "2026-11-07T00:15:11.000Z"
 }
