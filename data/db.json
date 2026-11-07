@@ -2028,7 +2028,12 @@
        "b": {
         "entryId": "m98r575yr3"
        },
-       "games": [],
+       "games": [
+        {
+         "a": 11,
+         "b": 15
+        }
+       ],
        "court": "Cancha 3",
        "time": 745,
        "phA": "Ganador SF1",
@@ -2692,5 +2697,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T15:56:01.774Z"
+ "updatedAt": "2026-11-07T15:58:56.434Z"
 }
