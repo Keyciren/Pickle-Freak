@@ -1938,7 +1938,12 @@
        "b": {
         "entryId": "m98r575yr3"
        },
-       "games": [],
+       "games": [
+        {
+         "a": 10,
+         "b": 15
+        }
+       ],
        "court": "Cancha 4",
        "time": 700,
        "group": 1,
@@ -1948,8 +1953,12 @@
       {
        "id": "rprqy273f0",
        "phase": "semi",
-       "a": null,
-       "b": null,
+       "a": {
+        "entryId": "ge6hwb5yr3"
+       },
+       "b": {
+        "entryId": "dio3dx5yr3"
+       },
        "games": [],
        "court": "Cancha 1",
        "time": 730,
@@ -1961,8 +1970,12 @@
       {
        "id": "ifdy9373f0",
        "phase": "semi",
-       "a": null,
-       "b": null,
+       "a": {
+        "entryId": "m98r575yr3"
+       },
+       "b": {
+        "entryId": "6ecsa85yr3"
+       },
        "games": [],
        "court": "Cancha 2",
        "time": 730,
@@ -2594,5 +2607,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T14:53:53.916Z"
+ "updatedAt": "2026-11-07T14:55:28.207Z"
 }
