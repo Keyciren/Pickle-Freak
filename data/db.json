@@ -1540,10 +1540,11 @@
         "entryId": "yztx9h5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 580,
        "group": 0,
-       "round": 1
+       "round": 1,
+       "turn": 1
       },
       {
        "id": "uml1vl73f0",
@@ -1555,10 +1556,11 @@
         "entryId": "igtte95yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 580,
        "group": 0,
-       "round": 1
+       "round": 1,
+       "turn": 1
       },
       {
        "id": "dbqb0p73f0",
@@ -1570,10 +1572,11 @@
         "entryId": "ge6hwb5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 595,
        "group": 0,
-       "round": 2
+       "round": 2,
+       "turn": 2
       },
       {
        "id": "ifievj73f0",
@@ -1585,10 +1588,11 @@
         "entryId": "mut86u5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 595,
        "group": 0,
-       "round": 2
+       "round": 2,
+       "turn": 2
       },
       {
        "id": "6oeysu73f0",
@@ -1600,10 +1604,11 @@
         "entryId": "igtte95yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 610,
        "group": 0,
-       "round": 3
+       "round": 3,
+       "turn": 3
       },
       {
        "id": "nwpirp73f0",
@@ -1615,10 +1620,11 @@
         "entryId": "6ecsa85yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 610,
        "group": 0,
-       "round": 3
+       "round": 3,
+       "turn": 3
       },
       {
        "id": "33vc5073f0",
@@ -1630,10 +1636,11 @@
         "entryId": "ge6hwb5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 625,
        "group": 0,
-       "round": 4
+       "round": 4,
+       "turn": 4
       },
       {
        "id": "nlqdy373f0",
@@ -1645,10 +1652,11 @@
         "entryId": "igtte95yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 625,
        "group": 0,
-       "round": 4
+       "round": 4,
+       "turn": 4
       },
       {
        "id": "ma1k3573f0",
@@ -1660,10 +1668,11 @@
         "entryId": "mut86u5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 640,
        "group": 0,
-       "round": 5
+       "round": 5,
+       "turn": 5
       },
       {
        "id": "d9nmt273f0",
@@ -1675,10 +1684,11 @@
         "entryId": "yztx9h5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 640,
        "group": 0,
-       "round": 5
+       "round": 5,
+       "turn": 5
       },
       {
        "id": "wqnwe073f0",
@@ -1690,10 +1700,11 @@
         "entryId": "m98r575yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 3",
+       "time": 580,
        "group": 1,
-       "round": 1
+       "round": 1,
+       "turn": 1
       },
       {
        "id": "j0yqy073f0",
@@ -1705,10 +1716,11 @@
         "entryId": "nomyme5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 4",
+       "time": 580,
        "group": 1,
-       "round": 1
+       "round": 1,
+       "turn": 1
       },
       {
        "id": "4q2ewj73f0",
@@ -1720,10 +1732,11 @@
         "entryId": "dio3dx5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 3",
+       "time": 595,
        "group": 1,
-       "round": 2
+       "round": 2,
+       "turn": 2
       },
       {
        "id": "steub173f0",
@@ -1735,10 +1748,11 @@
         "entryId": "ujn5jc5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 4",
+       "time": 595,
        "group": 1,
-       "round": 2
+       "round": 2,
+       "turn": 2
       },
       {
        "id": "lwrg8d73f0",
@@ -1750,10 +1764,11 @@
         "entryId": "nomyme5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 3",
+       "time": 610,
        "group": 1,
-       "round": 3
+       "round": 3,
+       "turn": 3
       },
       {
        "id": "96tvxq73f0",
@@ -1765,10 +1780,11 @@
         "entryId": "gqp3fk5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 4",
+       "time": 610,
        "group": 1,
-       "round": 3
+       "round": 3,
+       "turn": 3
       },
       {
        "id": "s02ym873f0",
@@ -1780,10 +1796,11 @@
         "entryId": "dio3dx5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 3",
+       "time": 625,
        "group": 1,
-       "round": 4
+       "round": 4,
+       "turn": 4
       },
       {
        "id": "thqx3p73f0",
@@ -1795,10 +1812,11 @@
         "entryId": "nomyme5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 4",
+       "time": 625,
        "group": 1,
-       "round": 4
+       "round": 4,
+       "turn": 4
       },
       {
        "id": "eys04m73f0",
@@ -1810,10 +1828,11 @@
         "entryId": "ujn5jc5yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 3",
+       "time": 640,
        "group": 1,
-       "round": 5
+       "round": 5,
+       "turn": 5
       },
       {
        "id": "0pv1k073f0",
@@ -1825,10 +1844,11 @@
         "entryId": "m98r575yr3"
        },
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 4",
+       "time": 640,
        "group": 1,
-       "round": 5
+       "round": 5,
+       "turn": 5
       },
       {
        "id": "rprqy273f0",
@@ -1836,11 +1856,12 @@
        "a": null,
        "b": null,
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 655,
        "slot": "SF1",
        "phA": "Clasificado 1",
-       "phB": "Clasificado 4"
+       "phB": "Clasificado 4",
+       "turn": 6
       },
       {
        "id": "ifdy9373f0",
@@ -1848,11 +1869,12 @@
        "a": null,
        "b": null,
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 655,
        "slot": "SF2",
        "phA": "Clasificado 2",
-       "phB": "Clasificado 3"
+       "phB": "Clasificado 3",
+       "turn": 6
       },
       {
        "id": "dz1trw73f0",
@@ -1860,10 +1882,11 @@
        "a": null,
        "b": null,
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 1",
+       "time": 670,
        "phA": "Perdedor SF1",
-       "phB": "Perdedor SF2"
+       "phB": "Perdedor SF2",
+       "turn": 7
       },
       {
        "id": "tl09gx73f0",
@@ -1871,10 +1894,11 @@
        "a": null,
        "b": null,
        "games": [],
-       "court": null,
-       "time": null,
+       "court": "Cancha 2",
+       "time": 670,
        "phA": "Ganador SF1",
-       "phB": "Ganador SF2"
+       "phB": "Ganador SF2",
+       "turn": 7
       }
      ],
      "generated": true
@@ -2003,16 +2027,16 @@
      "Cancha 3",
      "Cancha 4"
     ],
-    "start": "09:30",
+    "start": "09:40",
     "hours": 5,
     "minutes": {
      "match": 15,
      "final": 30
     },
     "rest": 0,
-    "generatedAt": "2026-11-07T00:28:40.537Z"
+    "generatedAt": "2026-11-07T12:41:41.576Z"
    }
   }
  ],
- "updatedAt": "2026-11-07T12:41:27.564Z"
+ "updatedAt": "2026-11-07T12:41:41.576Z"
 }
