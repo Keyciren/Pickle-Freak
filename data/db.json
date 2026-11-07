@@ -1535,7 +1535,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 540,
+       "time": 570,
        "group": 0,
        "round": 1,
        "turn": 1
@@ -1551,7 +1551,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 540,
+       "time": 570,
        "group": 0,
        "round": 1,
        "turn": 1
@@ -1567,7 +1567,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 570,
+       "time": 600,
        "group": 0,
        "round": 2,
        "turn": 3
@@ -1583,7 +1583,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 570,
+       "time": 600,
        "group": 0,
        "round": 2,
        "turn": 3
@@ -1599,7 +1599,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 600,
+       "time": 630,
        "group": 0,
        "round": 3,
        "turn": 5
@@ -1615,7 +1615,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 600,
+       "time": 630,
        "group": 0,
        "round": 3,
        "turn": 5
@@ -1631,7 +1631,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 630,
+       "time": 660,
        "group": 0,
        "round": 4,
        "turn": 7
@@ -1647,7 +1647,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 630,
+       "time": 660,
        "group": 0,
        "round": 4,
        "turn": 7
@@ -1663,7 +1663,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 660,
+       "time": 690,
        "group": 0,
        "round": 5,
        "turn": 9
@@ -1679,7 +1679,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 660,
+       "time": 690,
        "group": 0,
        "round": 5,
        "turn": 9
@@ -1695,7 +1695,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 540,
+       "time": 570,
        "group": 1,
        "round": 1,
        "turn": 1
@@ -1711,7 +1711,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 540,
+       "time": 570,
        "group": 1,
        "round": 1,
        "turn": 1
@@ -1727,7 +1727,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 570,
+       "time": 600,
        "group": 1,
        "round": 2,
        "turn": 3
@@ -1743,7 +1743,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 570,
+       "time": 600,
        "group": 1,
        "round": 2,
        "turn": 3
@@ -1759,7 +1759,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 600,
+       "time": 630,
        "group": 1,
        "round": 3,
        "turn": 5
@@ -1775,7 +1775,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 600,
+       "time": 630,
        "group": 1,
        "round": 3,
        "turn": 5
@@ -1791,7 +1791,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 630,
+       "time": 660,
        "group": 1,
        "round": 4,
        "turn": 7
@@ -1807,7 +1807,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 630,
+       "time": 660,
        "group": 1,
        "round": 4,
        "turn": 7
@@ -1823,7 +1823,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 660,
+       "time": 690,
        "group": 1,
        "round": 5,
        "turn": 9
@@ -1839,7 +1839,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 660,
+       "time": 690,
        "group": 1,
        "round": 5,
        "turn": 9
@@ -1851,7 +1851,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 1",
-       "time": 690,
+       "time": 720,
        "slot": "SF1",
        "phA": "Clasificado 1",
        "phB": "Clasificado 4",
@@ -1864,7 +1864,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 2",
-       "time": 690,
+       "time": 720,
        "slot": "SF2",
        "phA": "Clasificado 2",
        "phB": "Clasificado 3",
@@ -1877,7 +1877,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 1",
-       "time": 705,
+       "time": 735,
        "phA": "Perdedor SF1",
        "phB": "Perdedor SF2",
        "turn": 12
@@ -1889,7 +1889,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 3",
-       "time": 705,
+       "time": 735,
        "phA": "Ganador SF1",
        "phB": "Ganador SF2",
        "turn": 12
@@ -2021,7 +2021,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 555,
+       "time": 585,
        "group": 0,
        "round": 1,
        "turn": 2
@@ -2037,7 +2037,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 555,
+       "time": 585,
        "group": 0,
        "round": 1,
        "turn": 2
@@ -2053,7 +2053,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 585,
+       "time": 615,
        "group": 0,
        "round": 2,
        "turn": 4
@@ -2069,7 +2069,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 585,
+       "time": 615,
        "group": 0,
        "round": 2,
        "turn": 4
@@ -2085,7 +2085,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 615,
+       "time": 645,
        "group": 0,
        "round": 3,
        "turn": 6
@@ -2101,7 +2101,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 615,
+       "time": 645,
        "group": 0,
        "round": 3,
        "turn": 6
@@ -2117,7 +2117,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 645,
+       "time": 675,
        "group": 0,
        "round": 4,
        "turn": 8
@@ -2133,7 +2133,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 645,
+       "time": 675,
        "group": 0,
        "round": 4,
        "turn": 8
@@ -2149,7 +2149,7 @@
        },
        "games": [],
        "court": "Cancha 1",
-       "time": 675,
+       "time": 705,
        "group": 0,
        "round": 5,
        "turn": 10
@@ -2165,7 +2165,7 @@
        },
        "games": [],
        "court": "Cancha 2",
-       "time": 675,
+       "time": 705,
        "group": 0,
        "round": 5,
        "turn": 10
@@ -2181,7 +2181,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 555,
+       "time": 585,
        "group": 1,
        "round": 1,
        "turn": 2
@@ -2197,7 +2197,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 555,
+       "time": 585,
        "group": 1,
        "round": 1,
        "turn": 2
@@ -2213,7 +2213,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 585,
+       "time": 615,
        "group": 1,
        "round": 2,
        "turn": 4
@@ -2229,7 +2229,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 585,
+       "time": 615,
        "group": 1,
        "round": 2,
        "turn": 4
@@ -2245,7 +2245,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 615,
+       "time": 645,
        "group": 1,
        "round": 3,
        "turn": 6
@@ -2261,7 +2261,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 615,
+       "time": 645,
        "group": 1,
        "round": 3,
        "turn": 6
@@ -2277,7 +2277,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 645,
+       "time": 675,
        "group": 1,
        "round": 4,
        "turn": 8
@@ -2293,7 +2293,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 645,
+       "time": 675,
        "group": 1,
        "round": 4,
        "turn": 8
@@ -2309,7 +2309,7 @@
        },
        "games": [],
        "court": "Cancha 3",
-       "time": 675,
+       "time": 705,
        "group": 1,
        "round": 5,
        "turn": 10
@@ -2325,7 +2325,7 @@
        },
        "games": [],
        "court": "Cancha 4",
-       "time": 675,
+       "time": 705,
        "group": 1,
        "round": 5,
        "turn": 10
@@ -2337,7 +2337,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 3",
-       "time": 690,
+       "time": 720,
        "slot": "SF1",
        "phA": "Clasificado 1",
        "phB": "Clasificado 4",
@@ -2350,7 +2350,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 4",
-       "time": 690,
+       "time": 720,
        "slot": "SF2",
        "phA": "Clasificado 2",
        "phB": "Clasificado 3",
@@ -2363,7 +2363,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 2",
-       "time": 705,
+       "time": 735,
        "phA": "Perdedor SF1",
        "phB": "Perdedor SF2",
        "turn": 12
@@ -2375,7 +2375,7 @@
        "b": null,
        "games": [],
        "court": "Cancha 4",
-       "time": 705,
+       "time": 735,
        "phA": "Ganador SF1",
        "phB": "Ganador SF2",
        "turn": 12
@@ -2392,16 +2392,16 @@
      "Cancha 3",
      "Cancha 4"
     ],
-    "start": "09:00",
+    "start": "09:30",
     "hours": 5,
     "minutes": {
      "match": 15,
-     "final": 20
+     "final": 30
     },
     "rest": 0,
-    "generatedAt": "2026-11-06T17:41:58.039Z"
+    "generatedAt": "2026-11-07T00:28:40.537Z"
    }
   }
  ],
- "updatedAt": "2026-11-07T00:15:11.000Z"
+ "updatedAt": "2026-11-07T00:28:40.546Z"
 }
