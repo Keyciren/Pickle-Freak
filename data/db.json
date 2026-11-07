@@ -2649,7 +2649,12 @@
        "b": {
         "entryId": "ttq5d561j0"
        },
-       "games": [],
+       "games": [
+        {
+         "a": 7,
+         "b": 15
+        }
+       ],
        "court": "Cancha 4",
        "time": 745,
        "phA": "Ganador SF1",
@@ -2679,5 +2684,5 @@
    }
   }
  ],
- "updatedAt": "2026-11-07T15:47:41.580Z"
+ "updatedAt": "2026-11-07T15:55:47.508Z"
 }
